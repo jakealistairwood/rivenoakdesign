@@ -3,18 +3,26 @@ import dynamic from "next/dynamic";
 
 import Masthead from "@/components/Masthead";
 
-const SectionHeader = dynamic(() => import("@/components/SectionHeader"));
+const SectionHeader = dynamic(() => import("@/components/flexible/SectionHeader"));
+const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
+const TabbedSlider = dynamic(() => import("@/components/flexible/sliders/TabbedSlider"));
+const TimedSlider = dynamic(() => import("@/components/flexible/sliders/TimedSlider"));
+const StackedCards = dynamic(() => import("@/components/flexible/StackedCards"));
 
-const ComponentRenderer = ({ components = [] }) => {
+const ComponentRenderer = ({ components = [], backgroundColor }) => {
     const renderComponent = (type, props) => {
         const { key, ...otherProps } = props;
 
         const RenderedComponent = {
             masthead: Masthead,
             sectionHeader: SectionHeader,
+            productsCarousel: ProductsCarousel,
+            tabbedSlider: TabbedSlider,
+            timedSlider: TimedSlider,
+            stackedCards: StackedCards,
         }[type]
 
-        return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} /> : null;
+        return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} /> : null;
     }
     return (
         <>

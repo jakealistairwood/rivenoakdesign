@@ -7,6 +7,12 @@ export const fetchPageData = async (slug) => {
             "slug": slug.current,
             sections[]{
                 ...,
+                components[]{
+                    ...,
+                    products[]->{
+                        ...,
+                    }
+                }
             }
         }[0]
     `;

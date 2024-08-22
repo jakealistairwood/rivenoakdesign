@@ -25,10 +25,45 @@ export const sections = defineType({
                     type: "string",
                     options: {
                         list: [
-                            { name: "white", title: "White" },
-                            { name: "slateGrey", title: "Slate Grey" },
+                            { value: "white", title: "White" },
+                            { value: "carbon-grey", title: "Carbon Grey" },
+                            { value: "slate-grey", title: "Slate Grey" },
+                            { value: "forest-green", title: "Forest Green" },
                         ],
                     },
+                    group: "options",
+                },
+                {
+                    name: "paddingTop",
+                    title: "Padding Top",
+                    type: "string",
+                    options: {
+                        list: [
+                            { value: "none", title: "None" },
+                            { value: "normal", title: "Normal" },
+                        ],
+                    },
+                    initialValue: "none",
+                    group: "options",
+                },
+                {
+                    name: "paddingBottom",
+                    title: "Padding Bottom",
+                    type: "string",
+                    options: {
+                        list: [
+                            { value: "none", title: "None" },
+                            { value: "normal", title: "Normal" },
+                        ],
+                    },
+                    initialValue: "none",
+                    group: "options",
+                },
+                {
+                    name: "addDivider",
+                    title: "Add Divider",
+                    type: "boolean",
+                    initialValue: false,
                     group: "options",
                 },
                 {
@@ -38,6 +73,10 @@ export const sections = defineType({
                     of: [
                         { name: "masthead", type: "masthead" },
                         { name: "sectionHeader", type: "sectionHeader" },
+                        { name: "productsCarousel", type: "productsCarousel" },
+                        { name: "tabbedSlider", type: "tabbedSlider" },
+                        { name: "timedSlider", type: "timedSlider" },
+                        { name: "stackedCards", type: "stackedCards" },
                     ],
                     options: {
                         insertMenu: {
@@ -51,6 +90,15 @@ export const sections = defineType({
                                     name: "elements",
                                     title: "Elements",
                                     of: ["sectionHeader"], // Add other component types if needed
+                                },
+                                {
+                                    name: "flexible",
+                                    title: "Flexible",
+                                    of: [
+                                        "productsCarousel",
+                                        "tabbedSlider",
+                                        "timedSlider",
+                                    ],
                                 },
                             ],
                             views: [

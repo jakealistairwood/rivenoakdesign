@@ -18,5 +18,94 @@ export const masthead = {
             type: "string",
             title: "Subheading",
         },
+        {
+            name: "images",
+            type: "object",
+            title: "Images",
+            fields: [
+                {
+                    name: "left_block",
+                    type: "object",
+                    title: "Left Block",
+                    fields: [
+                        {
+                            name: "image_one",
+                            type: "image",
+                            title: "Image One",
+                            fields: [
+                                {
+                                    name: "alt_text",
+                                    type: "string",
+                                    title: "Alt Text",
+                                },
+                                {
+                                    name: "blur_image",
+                                    type: "boolean",
+                                    title: "Blur Image?",
+                                },
+                            ],
+                        },
+                        {
+                            name: "image_two",
+                            type: "image",
+                            title: "Image Two",
+                            fields: [
+                                {
+                                    name: "alt_text",
+                                    type: "string",
+                                    title: "Alt Text",
+                                },
+                                {
+                                    name: "blur_image",
+                                    type: "boolean",
+                                    title: "Blur Image?",
+                                },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    name: "right_block",
+                    type: "object",
+                    title: "Right Block",
+                    fields: [
+                        {
+                            name: "image_one",
+                            type: "image",
+                            title: "Image One",
+                            fields: [
+                                {
+                                    name: "alt_text",
+                                    type: "string",
+                                    title: "Alt Text",
+                                },
+                                {
+                                    name: "blur_image",
+                                    type: "boolean",
+                                    title: "Blur Image?",
+                                },
+                            ],
+                        },
+                        {
+                            name: "image_two",
+                            type: "image",
+                            title: "Image Two",
+                            fields: [
+                                {
+                                    name: "alt_text",
+                                    type: "string",
+                                    title: "Alt Text",
+                                },
+                                {
+                                    name: "blur_image",
+                                    type: "boolean",
+                                    title: "Blur Image?",
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
     ],
 };

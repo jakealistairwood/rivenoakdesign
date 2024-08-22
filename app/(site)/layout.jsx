@@ -1,7 +1,83 @@
-import { Inter } from "next/font/google";
+import { Inter, Bebas_Neue } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
+import Navbar from "@/components/globals/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
+const bebasNeue = Bebas_Neue({subsets: ["latin"], weight: ["400"], variable: "--font-subheading" });
+
+const cooperHewitt = localFont({
+    src: [
+        {
+            path: "../../public/fonts/cooperhewitt-bold-webfont.woff2",
+            weight: "700",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/cooperhewitt-bolditalic-webfont.woff2",
+            weight: "700",
+            style: "italic",
+        },
+        {
+            path: "../../public/fonts/cooperhewitt-medium-webfont.woff2",
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/cooperhewitt-mediumitalic-webfont.woff2",
+            weight: "500",
+            style: "italic",
+        }
+    ],
+    variable: "--font-heading",
+});
+
+const ppNeueMontreal = localFont({
+    src: [
+        {
+            path: "../../public/fonts/PPNeueMontreal-Light.woff2",
+            weight: "300",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/PPNeueMontreal-Book.woff2",
+            weight: "350",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/PPNeueMontreal-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/PPNeueMontreal-Medium.woff2",
+            weight: "500",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/PPNeueMontreal-Bold.woff2",
+            weight: "700",
+            style: "normal",
+        }
+    ],
+    variable: "--font-body",
+})
+
+const ppFraktionMono = localFont({
+    src: [
+      {
+        path: "../../public/fonts/PPFraktionMono-Regular.woff2",
+        weight: "400",
+        style: "normal",
+      },
+      {
+        path: "../../public/fonts/PPFraktionMono-Bold.woff2",
+        weight: "700",
+        style: "normal",
+      }
+    ],
+    variable: "--font-mono",
+  })
 
 export const metadata = {
     title: "Create Next App",
@@ -11,7 +87,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={`${ppNeueMontreal.variable} ${bebasNeue.variable} ${cooperHewitt.variable} ${ppFraktionMono.variable}`}>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
