@@ -8,6 +8,9 @@ const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCar
 const TabbedSlider = dynamic(() => import("@/components/flexible/sliders/TabbedSlider"));
 const TimedSlider = dynamic(() => import("@/components/flexible/sliders/TimedSlider"));
 const StackedCards = dynamic(() => import("@/components/flexible/StackedCards"));
+const TwoColTextAsset = dynamic(() => import("@/components/flexible/TwoColTextAsset"));
+const ScrollableImage = dynamic(() => import("@/components/flexible/ScrollableImage"));
+const ThreeColCards = dynamic(() => import("@/components/flexible/ThreeColCards"));
 
 const ComponentRenderer = ({ components = [], backgroundColor }) => {
     const renderComponent = (type, props) => {
@@ -20,6 +23,9 @@ const ComponentRenderer = ({ components = [], backgroundColor }) => {
             tabbedSlider: TabbedSlider,
             timedSlider: TimedSlider,
             stackedCards: StackedCards,
+            twoColTextAsset: TwoColTextAsset,
+            scrollableImage: ScrollableImage,
+            threeColCards: ThreeColCards,
         }[type]
 
         return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} /> : null;

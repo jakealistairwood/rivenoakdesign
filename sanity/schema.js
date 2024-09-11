@@ -8,6 +8,9 @@ import { productsCarousel } from "./schemas/productsCarousel";
 import { tabbedSlider } from "./schemas/tabbedSlider";
 import { timedSlider } from "./schemas/timedSlider";
 import { stackedCards } from "./schemas/stackedCards";
+import { twoColTextAsset } from "./schemas/twoColTextAsset";
+import { scrollableImage } from "./schemas/scrollableImage";
+import { threeColCards } from "./schemas/threeColCards";
 
 export const schema = {
     types: [
@@ -21,5 +24,9 @@ export const schema = {
         tabbedSlider,
         timedSlider,
         stackedCards,
+        twoColTextAsset,
+        scrollableImage,
+        threeColCards,
+        // Add more schema types as needed...
     ],
 };

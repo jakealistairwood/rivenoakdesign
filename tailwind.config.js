@@ -27,6 +27,7 @@ module.exports = {
                 subheading: "var(--font-subheading)",
                 heading: "var(--font-heading)",
                 mono: "var(--font-mono)",
+                inter: "var(--font-inter)",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

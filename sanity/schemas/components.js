@@ -7,6 +7,8 @@ export const components = defineType({
         { name: "masthead", type: "masthead" },
         { name: "sectionHeader", type: "sectionHeader" },
         { name: "productsCarousel", type: "productsCarousel" },
+        { name: "twoColTextAsset", type: "twoColTextAsset" },
+        { name: "scrollableImage", type: "scrollableImage" },
     ],
     options: {
         insertMenu: {
@@ -24,7 +26,11 @@ export const components = defineType({
                 {
                     name: "flexible",
                     title: "Flexible",
-                    of: ["productsCarousel"],
+                    of: [
+                        "productsCarousel",
+                        "twoColTextAsset",
+                        "scrollableImage",
+                    ], // Add other component types if needed
                 },
             ],
             views: [

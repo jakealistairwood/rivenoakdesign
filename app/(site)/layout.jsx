@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import Navbar from "@/components/globals/Navbar";
 
-// const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const bebasNeue = Bebas_Neue({subsets: ["latin"], weight: ["400"], variable: "--font-subheading" });
 
 const cooperHewitt = localFont({
@@ -87,7 +87,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${ppNeueMontreal.variable} ${bebasNeue.variable} ${cooperHewitt.variable} ${ppFraktionMono.variable}`}>
+            <body className={`${inter.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${cooperHewitt.variable} ${ppFraktionMono.variable}`}>
                 <Navbar />
                 {children}
             </body>

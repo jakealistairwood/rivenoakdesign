@@ -51,7 +51,7 @@ const ProductsCarousel = (props) => {
                 <SectionHeader {...sectionHeader} />
                 <div className="flex items-center gap-2">
                     <button
-                        className="p-3 bg-vibrant-green rounded"
+                        className="p-3 border border-black/20 rounded"
                         ref={prevBtnRef}
                         type="button"
                         aria-label="Previous Product"
@@ -60,7 +60,7 @@ const ProductsCarousel = (props) => {
                         <IndicatorIcon />
                     </button>
                     <button
-                        className="p-3 bg-vibrant-green rounded"
+                        className="p-3 border border-black/20 rounded"
                         ref={nextBtnRef}
                         type="button"
                         aria-label="Next Product"
@@ -74,7 +74,7 @@ const ProductsCarousel = (props) => {
                     <Swiper
                         onSwiper={setSwiperInstance}
                         modules={[Navigation]}
-                        slidesPerView={4}
+                        slidesPerView={2}
                         spaceBetween={20}
                         navigation={{
                             prevEl: prevBtnRef.current,
@@ -113,7 +113,7 @@ const ProductTypePreview = ({ title, slug, thumbnail }) => {
     return (
         <Link href={`/products/${slug?.current}`}>
             <div
-                className="flex flex-col relative aspect-[1/1] overflow-hidden"
+                className="flex flex-col relative aspect-[802/451] overflow-hidden"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 onFocus={() => setHovered(true)}
@@ -124,11 +124,12 @@ const ProductTypePreview = ({ title, slug, thumbnail }) => {
                     src={urlFor(thumbnail?.asset)}
                     layout="fill"
                     objectFit="cover"
-                    className={`transition-transform duration-300 ease-in-out ${hovered ? "blur-md scale-110" : "blur-none scale-100"}`}
+                    // className={`transition-transform duration-300 ease-in-out ${hovered ? "blur-md scale-110" : "blur-none scale-100"}`}
+                    className="transition-transform duration-300 ease-in-out"
                 />
-
+                <div className="absolute px-2 py-1 rounded text-sm tracking-wide bg-white text-black top-4 left-4">Product</div>
                 {/* <Image src={urlFor(thumbnail?.asset)} fill className="w-full h-full relative z-[1] overflow-hidden" /> */}
-                <div
+                {/* <div
                     className={`relative h-full z-[2] ${hovered ? "bg-[#ACABA0]/30" : "bg-[#ACABA0]/0"} duration-300 ease transition-all p-10 text-white`}
                 >
                     {hovered && (
@@ -138,10 +139,10 @@ const ProductTypePreview = ({ title, slug, thumbnail }) => {
                             </h3>
                         </div>
                     )}
-                </div>
+                </div> */}
             </div>
             <div className="flex justify-between items-center mt-4">
-                <h3 className="font-mono text-base tracking-[0.22em] uppercase">{title}</h3>
+                <h3 className="font-inter text-[1.5rem] -tracking-[0.01rem]">{title}</h3>
             </div>
         </Link>
     );

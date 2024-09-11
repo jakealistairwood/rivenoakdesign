@@ -22,8 +22,21 @@
   }
 }
 
+html {
+  -webkit-font-smoothing: antialiased; /* For WebKit browsers like Chrome and Safari */
+  -moz-osx-font-smoothing: grayscale; /* For macOS (Firefox) */
+  font-smoothing: antialiased; /* Standard for other browsers */
+}
+
 html, body {
   font-family: var(--font-body);
+}
+
+.body--fixed {
+  position: fixed !important;
+  inset: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .font-heading {
@@ -58,4 +71,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-mask-anim .line {
   clip-path: polygon(-10% 0%, 110% 0%, 110% 110%, -10% 110%);
+}
+
+.section-header h2 span {
+  @apply font-light;
 }

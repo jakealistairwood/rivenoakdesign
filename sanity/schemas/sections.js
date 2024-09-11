@@ -34,6 +34,13 @@ export const sections = defineType({
                     group: "options",
                 },
                 {
+                    name: "remove_container",
+                    title: "Remove Container?",
+                    type: "boolean",
+                    initialValue: false,
+                    group: "options",
+                },
+                {
                     name: "paddingTop",
                     title: "Padding Top",
                     type: "string",
@@ -77,6 +84,9 @@ export const sections = defineType({
                         { name: "tabbedSlider", type: "tabbedSlider" },
                         { name: "timedSlider", type: "timedSlider" },
                         { name: "stackedCards", type: "stackedCards" },
+                        { name: "twoColTextAsset", type: "twoColTextAsset" },
+                        { name: "scrollableImage", type: "scrollableImage" },
+                        { name: "threeColCards", type: "threeColCards" },
                     ],
                     options: {
                         insertMenu: {
@@ -98,6 +108,9 @@ export const sections = defineType({
                                         "productsCarousel",
                                         "tabbedSlider",
                                         "timedSlider",
+                                        "twoColTextAsset",
+                                        "scrollableImage",
+                                        "threeColCards",
                                     ],
                                 },
                             ],
