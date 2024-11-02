@@ -40,6 +40,19 @@ export const page = {
             type: "sections",
             group: "content",
         },
+        {
+            name: "navbar_color",
+            type: "string",
+            title: "Navbar Color",
+            options: {
+                list: [
+                    { value: "default", title: "Default" },
+                    { value: "white", title: "White" },
+                ],
+            },
+            initialValue: "default",
+            group: "pageOptions",
+        },
     ],
     preview: {
         select: {

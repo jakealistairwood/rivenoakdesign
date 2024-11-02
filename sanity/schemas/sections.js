@@ -29,6 +29,8 @@ export const sections = defineType({
                             { value: "carbon-grey", title: "Carbon Grey" },
                             { value: "slate-grey", title: "Slate Grey" },
                             { value: "forest-green", title: "Forest Green" },
+                            { value: "walnut", title: "Walnut" },
+                            { value: "slate-green", title: "Slate Green" },
                         ],
                     },
                     group: "options",
@@ -36,6 +38,13 @@ export const sections = defineType({
                 {
                     name: "remove_container",
                     title: "Remove Container?",
+                    type: "boolean",
+                    initialValue: false,
+                    group: "options",
+                },
+                {
+                    name: "overflow_hidden",
+                    title: "Overflow Hidden?",
                     type: "boolean",
                     initialValue: false,
                     group: "options",
@@ -87,6 +96,8 @@ export const sections = defineType({
                         { name: "twoColTextAsset", type: "twoColTextAsset" },
                         { name: "scrollableImage", type: "scrollableImage" },
                         { name: "threeColCards", type: "threeColCards" },
+                        { name: "imageGrid", type: "imageGrid" },
+                        { name: "textImageGrid", type: "textImageGrid" },
                     ],
                     options: {
                         insertMenu: {
@@ -111,6 +122,8 @@ export const sections = defineType({
                                         "twoColTextAsset",
                                         "scrollableImage",
                                         "threeColCards",
+                                        "imageGrid",
+                                        "textImageGrid",
                                     ],
                                 },
                             ],

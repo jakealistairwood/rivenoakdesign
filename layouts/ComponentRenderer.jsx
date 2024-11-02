@@ -11,6 +11,8 @@ const StackedCards = dynamic(() => import("@/components/flexible/StackedCards"))
 const TwoColTextAsset = dynamic(() => import("@/components/flexible/TwoColTextAsset"));
 const ScrollableImage = dynamic(() => import("@/components/flexible/ScrollableImage"));
 const ThreeColCards = dynamic(() => import("@/components/flexible/ThreeColCards"));
+const ImageGrid = dynamic(() => import("@/components/flexible/ImageGrid"));
+const TextImageGrid = dynamic(() => import("@/components/flexible/TextImageGrid"));
 
 const ComponentRenderer = ({ components = [], backgroundColor }) => {
     const renderComponent = (type, props) => {
@@ -26,6 +28,8 @@ const ComponentRenderer = ({ components = [], backgroundColor }) => {
             twoColTextAsset: TwoColTextAsset,
             scrollableImage: ScrollableImage,
             threeColCards: ThreeColCards,
+            imageGrid: ImageGrid,
+            textImageGrid: TextImageGrid,
         }[type]
 
         return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} /> : null;

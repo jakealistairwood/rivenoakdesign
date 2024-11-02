@@ -1,11 +1,13 @@
 import React from "react";
 import NavbarWrapper from "./NavbarWrapper";
+import NewNavbar from "./NewNavbar";
 
 const Navbar = () => {
     return (
-        <>
-            <NavbarWrapper />
-        </>
+        <div className="">
+            {/* <NavbarWrapper /> */}
+            <NewNavbar />
+        </div>
     )
 }
 

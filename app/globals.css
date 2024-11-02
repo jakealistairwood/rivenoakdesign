@@ -47,6 +47,10 @@ html, body {
   font-family: var(--font-body);
 }
 
+.font-serif {
+  font-family: var(--font-serif);
+}
+
 .font-subheading {
   font-family: var(--font-subheading);
 }
@@ -64,15 +68,59 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-mask .line {
-  @apply bg-carbon-grey;
+  position: relative;
   clip-path: polygon(-10% -100%, 110% -100%, 110% 0%, -10% 0%);
-  transition: all 0.3s cubic-bezier(1, 0, 0, 1)
+  transition: all 1s cubic-bezier(1, 0, 0, 1);
+  line-height: 0.89;
 }
 
 .text-mask-anim .line {
   clip-path: polygon(-10% 0%, 110% 0%, 110% 110%, -10% 110%);
 }
 
-.section-header h2 span {
+#products-carousel .swiper {
+  overflow: visible !important;
+}
+
+#products-carousel .carousel-btn {
+  cursor: pointer;
+}
+#products-carousel .carousel-btn:disabled {
+  cursor: default;
+}
+
+/* .section-header h2 span {
   @apply font-light;
 }
+
+.section-header .section-header__h2 .line {
+  position: relative;
+  overflow: clip;
+}
+
+.section-header .section-header__h2 .line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  clip-path: polygon(-10% 0%, 110% 0%, 110% 110%, -10% 110%);
+}
+
+.section-header .section-header__h2.anim .line::after {
+  clip-path: polygon(-10% -100%, 110% -100%, 110% 0%, -10% 0%);
+}
+
+.section-header .section-header__h2 .line .char {
+  position: relative;
+  display: inline-block;
+  translate: none;
+  rotate: none;
+  transform: translate(0%, 110%) rotate(0.001deg);
+}
+
+.section-header .section-header__h2.anim .line .char {
+  transform: translate(0px, 0px);
+} */

@@ -2,35 +2,10 @@ import { Inter, Bebas_Neue } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
 import Navbar from "@/components/globals/Navbar";
+import Footer from "@/components/globals/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const bebasNeue = Bebas_Neue({subsets: ["latin"], weight: ["400"], variable: "--font-subheading" });
-
-const cooperHewitt = localFont({
-    src: [
-        {
-            path: "../../public/fonts/cooperhewitt-bold-webfont.woff2",
-            weight: "700",
-            style: "normal",
-        },
-        {
-            path: "../../public/fonts/cooperhewitt-bolditalic-webfont.woff2",
-            weight: "700",
-            style: "italic",
-        },
-        {
-            path: "../../public/fonts/cooperhewitt-medium-webfont.woff2",
-            weight: "500",
-            style: "normal",
-        },
-        {
-            path: "../../public/fonts/cooperhewitt-mediumitalic-webfont.woff2",
-            weight: "500",
-            style: "italic",
-        }
-    ],
-    variable: "--font-heading",
-});
 
 const ppNeueMontreal = localFont({
     src: [
@@ -63,6 +38,22 @@ const ppNeueMontreal = localFont({
     variable: "--font-body",
 })
 
+const instrumentSerif = localFont({
+    src: [
+        {
+            path: "../../public/fonts/InstrumentSerif-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/InstrumentSerif-Italic.woff2",
+            weight: "400",
+            style: "italic",
+        }
+    ],
+    variable: "--font-serif",
+})
+
 const ppFraktionMono = localFont({
     src: [
       {
@@ -87,9 +78,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${cooperHewitt.variable} ${ppFraktionMono.variable}`}>
+            <body className={`${inter.variable} ${instrumentSerif.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${ppFraktionMono.variable}`}>
                 <Navbar />
                 {children}
+                <Footer />
             </body>
         </html>
     );

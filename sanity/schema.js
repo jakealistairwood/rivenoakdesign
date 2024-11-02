@@ -11,6 +11,8 @@ import { stackedCards } from "./schemas/stackedCards";
 import { twoColTextAsset } from "./schemas/twoColTextAsset";
 import { scrollableImage } from "./schemas/scrollableImage";
 import { threeColCards } from "./schemas/threeColCards";
+import { imageGrid } from "./schemas/imageGrid";
+import { textImageGrid } from "./schemas/textImageGrid";
 
 export const schema = {
     types: [
@@ -27,6 +29,8 @@ export const schema = {
         twoColTextAsset,
         scrollableImage,
         threeColCards,
+        imageGrid,
+        textImageGrid,
         // Add more schema types as needed...
     ],
 };

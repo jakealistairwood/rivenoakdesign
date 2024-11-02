@@ -4,6 +4,7 @@ import SplitType from "split-type";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import Link from "next/link";
 
 const Masthead = (props) => {
     const [imageAnimationsComplete, setImageAnimationsComplete] = useState(false);
@@ -39,7 +40,6 @@ const Masthead = (props) => {
             }
         })
     }
-
     const textMaskAnimation = {
         initial: {
             opacity: 1,
@@ -73,32 +73,39 @@ const Masthead = (props) => {
 
     return (
         <header className="min-h-screen flex flex-col items-center justify-center text-center">
-            <div className="max-w-[1115px] w-full mx-auto uppercase pt-20 relative" ref={containerRef}>
-                {hasEyebrow && <motion.span variants={textMaskAnimation} initial="initial" animate={isInView ? "animate" : "initial"} className="block tracking-[0.41em] mb-10 relative overflow-hidden">{eyebrow}</motion.span>}
-                <h1 className={`uppercase text-[8.25rem] leading-[0.83] font-heading font-black flex flex-col relative z-[2] ${isInView ? "text-mask-anim" : "text-mask"}`}>
+            <div className="max-w-[1019px] w-full mx-auto pt-20 relative" ref={containerRef}>
+                {/* {hasEyebrow && <motion.span variants={textMaskAnimation} initial="initial" animate={isInView ? "animate" : "initial"} className="block tracking-[0.41em] mb-10 relative overflow-hidden">{eyebrow}</motion.span>} */}
+                <h1 className="font-serif text-[5.5rem] -tracking-[2%] leading-[100%] relative z-[2]">{heading}</h1>
+                {/* <motion.h1 
+                    className={`uppercase text-[8.25rem] leading-[0.83] font-heading font-black flex flex-col relative z-[2] text-mask ${isInView ? "text-mask-anim" : ""}`}
+                >
                     <span className="relative" ref={headingRef}>
                         {heading}
                     </span>
                     <span className="sr-only">{heading}</span>
-                </h1>
-                {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal">{subheading}</span>}
+                </motion.h1> */}
+                {/* {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal">{subheading}</span>} */}
+                <div className="flex items-center justify-center gap-x-4 mt-10 relative z-[2]">
+                    <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">View our products</Link>
+                    <Link className="bg-white/[6%] text-white px-[30px] py-5 rounded-md font-medium text-sm" href="/">About Riven Oak</Link>
+                </div>
                 <div className="absolute grid grid-cols-2 inset-0">
                     <div className="relative">
                         {left_block?.image_one && <motion.div variants={imageOneAnimation} initial="initial" animate="animate" className="absolute z-[1] top-10 -left-[40%] aspect-[370/176] w-full max-w-[370px]" custom={1}>
                             <div className="aspect-[370/176] relative">
-                                <Image className="object-cover" src={urlFor(left_block?.image_one?.asset)} alt="" fill />
+                                <Image className="object-cover" src={urlFor(left_block?.image_one?.asset)} alt="" fill priority placeholder={left_block?.image_one?.placeholder} />
                             </div>
                         </motion.div>}
                         {left_block?.image_two && <motion.div className="absolute left-14 -top-20 w-full max-w-[190px] blur-sm grayscale" variants={imageOneAnimation} initial="initial" animate="animate" custom={2}>
                             <div className="aspect-[1/1] relative">
-                                <Image src={urlFor(left_block?.image_two?.asset)} alt="" fill />
+                                <Image src={urlFor(left_block?.image_two?.asset)} alt="" fill priority placeholder={left_block?.image_two?.placeholder} />
                             </div>
                         </motion.div>}
                     </div>
                     <div className="relative">
                         {right_block?.image_two && <motion.div variants={imageOneAnimation} initial="initial" animate="animate" onAnimationComplete={() => setImageAnimationsComplete(true)} className="max-w-[332px] w-full absolute -bottom-20 -right-[160px]" custom={2.8}>
                             <div className="aspect-[332/227] relative">
-                                <Image src={urlFor(right_block?.image_two?.asset)} alt="" fill />
+                                <Image src={urlFor(right_block?.image_two?.asset)} alt="" fill priority placeholder={right_block?.image_two?.placeholder} />
                             </div>    
                         </motion.div>}
                     </div>
