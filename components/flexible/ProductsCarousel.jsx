@@ -73,24 +73,43 @@ const ProductsCarousel = (props) => {
                         className="flex items-center gap-x-2 ml-4"
                         href="/products"
                     >
-                        <span className="decoration-current decoration-dotted">
-                            View all
-                        </span>
-                        <div className="w-[20px] h-[20px]">
-                            <svg
-                                className="w-full h-full"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
-                                    fill="black"
-                                />
-                            </svg>
-                        </div>
+                        <button class="group relative inline-flex items-center justify-center rounded-md bg-transparent font-medium text-black">
+                            <span>View all</span>
+                            <div class="relative ml-1 h-5 w-5 overflow-hidden">
+                                <div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4">
+                                    <svg
+                                        width="15"
+                                        height="15"
+                                        viewBox="0 0 15 15"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                    >
+                                        <path
+                                            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                                            fill="currentColor"
+                                            fillRule="evenodd"
+                                            clipRule="evenodd"
+                                        ></path>
+                                    </svg>
+                                    <svg
+                                        width="15"
+                                        height="15"
+                                        viewBox="0 0 15 15"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 -translate-x-4"
+                                    >
+                                        <path
+                                            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                                            fill="currentColor"
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </button>
                     </Link>
                 </div>
             </div>
@@ -135,23 +154,19 @@ export default ProductsCarousel;
 
 const ProductTypePreview = ({ title, slug, thumbnail }) => {
     const [hovered, setHovered] = useState(false);
-    // const mask = "M 16 0 H 687 q 16 0 16 16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 312 q 0 16 -16 16 l -59 0 q -16 0 -16 16 l 0 35 q 0 16 -16 16 H 16 q -16 0 -16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 16 q 0 -16 16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0";
-    // const mask = "M 156.013 0 H 687 q 16 0 16 16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 312 q 0 16 -16 16 l -59 0 q -16 0 -16 16 l 0 35 q 0 16 -16 16 H 16 q -16 0 -16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 65.0044 q 0 -16 16 -16 l 117.611 0 q 11.201 0 11.201 -11.201 l 0 -26.6024 q 0 -11.201 11.201 -11.201";
-    const mask =
-        "M 130.812 0 H 687 q 16 0 16 16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 312 q 0 16 -16 16 l -59 0 q -16 0 -16 16 l 0 35 q 0 16 -16 16 H 16 q -16 0 -16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 56.184 q 0 -16 16 -16 l 96.4417 0 q 9.18492 0 9.18492 -9.18492 l 0 -21.8142 q 0 -9.18492 9.18492 -9.18492";
+
     return (
         <div className="flex flex-col group">
             <div className="relative aspect-[1/1] overflow-hidden">
                 <div
-                    className="absolute inset-0 h-full w-full overflow-hidden rounded-xl"
-                    style={{ clipPath: `path(${mask})` }}
+                    className="absolute inset-0 h-full w-full overflow-hidden rounded-[3px]"
                 >
                     <Link
-                        className="absolute inset-0 h-full w-full rounded-xl"
+                        className="absolute inset-0 h-full w-full rounded-[3px]"
                         href={`/products/${slug?.current}`}
                     >
                         <div
-                            className="flex flex-col relative aspect-[1/1]"
+                            className="flex flex-col relative aspect-[1/1] p-10"
                             onMouseEnter={() => setHovered(true)}
                             onMouseLeave={() => setHovered(false)}
                             onFocus={() => setHovered(true)}
@@ -161,114 +176,17 @@ const ProductTypePreview = ({ title, slug, thumbnail }) => {
                                 src={urlFor(thumbnail?.asset)}
                                 layout="fill"
                                 objectFit="cover"
-                                className={`transition-transform rounded-xl duration-300 absolute inset-0 h-full w-full ease-in-out ${hovered ? "scale-105" : "scale-100"}`}
+                                className={`transition-transform rounded-[3px] duration-300 absolute inset-0 h-full w-full ease-in-out ${hovered ? "scale-105" : "scale-100"}`}
+                                placeholder={thumbnail?.placeholder}
                                 // className="transition-transform duration-300 ease-in-out"
                             />
-                            {/* <div className="absolute bottom-0 right-0 bg-white z-[4] w-[91px] h-[67px]">
-                                    view
-                                </div> */}
-                            {/* <Image src={urlFor(thumbnail?.asset)} fill className={`w-full h-full relative z-[1] overflow-hidden ${hovered ? "blur-md" : "blur-none"}`} /> */}
-                            {/* <div className="absolute inset-0 h-full w-full z-[2]" style={{ clipPath: `path("M 16 0 H 687 q 16 0 16 16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 312 q 0 16 -16 16 l -59 0 q -16 0 -16 16 l 0 35 q 0 16 -16 16 H 16 q -16 0 -16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0 V 16 q 0 -16 16 -16 l 0 0 q 0 0 0 0 l 0 0 q 0 0 0 0")` }}></div> */}
-                            {/* <div className="absolute px-2 py-1 rounded text-sm tracking-wide bg-white text-black top-4 left-4">Product</div> */}
-                            {/* <Image src={urlFor(thumbnail?.asset)} fill className="w-full h-full relative z-[1] overflow-hidden" /> */}
-                            {/* <div
-                                className={`relative h-full z-[2] ${hovered ? "bg-[#ACABA0]/30" : "bg-[#ACABA0]/0"} duration-300 ease transition-all p-10 text-white`}
-                                >
-                                {hovered && (
-                                    <div className="flex flex-col h-full max-w-[233px] w-full">
-                                    <h3 className="uppercase font-heading tracking-[0.22em] leading-[1.2] text-xl">
-                                    {title}
-                                    </h3>
-                                    </div>
-                                    )}
-                                    </div> */}
-                            {/* <div className="bg-white text-white absolute bottom-0 right-0 rounded-tl-3xl h-[5rem] w-[5rem] z-[3]">
-                                <svg
-                                    className="w-[3rem] h-[3rem] top-[1px] -right-[1px] absolute -translate-y-[100%] -rotate-[270deg]"
-                                    width="100"
-                                    height="100"
-                                    viewBox="0 0 100 100"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M98.0996 0H99.9996V51.9H98.0996C98.0996 24.3 75.6996 1.9 48.0996 1.9V0H98.0996Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                                <svg
-                                    className="w-[3rem] h-[3rem] absolute -bottom-[1px] left-[1px] rotate-[90deg] -translate-x-[100%]"
-                                    width="100"
-                                    height="100"
-                                    viewBox="0 0 100 100"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M98.0996 0H99.9996V51.9H98.0996C98.0996 24.3 75.6996 1.9 48.0996 1.9V0H98.0996Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                                <div className="relative pl-4 pt-4 pb-0 h-full">
-                                    <div className="bg-[#F1F1F1] text-black group-hover:bg-vibrant-green transition-colors duration-200 ease h-full rounded-[14px] flex items-center justify-center">
-                                        <svg
-                                            width="21"
-                                            height="21"
-                                            viewBox="0 0 21 21"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M13.5 6.49707L17.5 10.4991L13.5 14.5001M4.5 10.5001H17.5"
-                                                stroke="currentColor"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div> */}
+                            <div className="absolute bottom-0 left-0 w-full h-[50%] z-[2]" style={{
+                                backgroundImage: "linear-gradient(to bottom, transparent, #000000)",
+                            }} />
+                            <h3 className="relative z-[4] text-white mt-auto font-serif w-fit text-3xl">{title}</h3>
                         </div>
                     </Link>
                 </div>
-            </div>
-            <div className="flex flex-col gap-y-[4px] mt-6 px-3">
-                {/* <p className="uppercase font-medium font-mono tracking-widest opacity-90">Product</p> */}
-                <h3
-                    className={`font-serif relative w-fit text-3xl`}
-                >
-                    {title}
-                    <div className="absolute -bottom-2 left-0 right-0 w-full h-[2px]">
-                        <div className="relative h-full overflow-hidden w-full">
-                            <div className="scale-x-0 h-full w-full bg-black/[40%] origin-left group-hover:scale-x-100 duration-50 ease-in-out transition-all" />
-                        </div>
-                    </div>
-                </h3>
-                {/* <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hovered ? 1 : 0 }}
-                    transition={{
-                        duration: 0.2,
-                        type: "spring",
-                        stiffness: 150,
-                    }}
-                    className="flex items-center rounded justify-center gap-x-2 overflow-hidden"
-                >
-                    <svg
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M13.5 6.49707L17.5 10.4991L13.5 14.5001M4.5 10.5001H17.5"
-                            stroke="black"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                </motion.div> */}
             </div>
         </div>
     );

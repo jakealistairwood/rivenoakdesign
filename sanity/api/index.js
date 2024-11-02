@@ -139,6 +139,19 @@ export const fetchProducts = async () => {
     return await client.fetch(query);
 };
 
+export const fetchProductData = async (slug) => {
+    const query = `
+        *[_type == "products" && slug.current == $slug]{
+            ...,
+            "slug": slug.current,
+        }[0]
+    `;
+
+    const params = { slug };
+
+    return await client.fetch(query, params);
+};
+
 export const fetchNavbarColor = async (slug) => {
     const query = `
         *[_type == "page" && slug.current == $slug] {

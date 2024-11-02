@@ -33,7 +33,7 @@ const Section = memo((props) => {
             <div className={`${remove_container ? "" : "container"} ${paddingClasses.join(" ")}`}>
                 <ComponentRenderer components={components} backgroundColor={backgroundColor} />
                 {addDivider && <div className={`${getPaddingTop[paddingTop]}`}>
-                    <div className="h-[1px] w-full bg-[#D1D1D1]/30" />
+                    <div className="h-[1px] w-full bg-[#D1D1D1]/50" />
                 </div>}
             </div>
         </section>

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect, useRef } from "react";
 import { checkPropertyExists } from "@/utils/helpers";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,13 +11,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-const TimedSlider = ({ slides }) => {
+import { isBgLightColor } from "@/utils/colors";
+
+const TimedSlider = ({ slides, backgroundColor }) => {
     const hasSlides = checkPropertyExists(slides);
 
     const prevBtnRef = useRef(null);
     const nextBtnRef = useRef(null);
 
     const [swiperInstance, setSwiperInstance] = useState(null);
+
+    const isLightColor = isBgLightColor[backgroundColor];
+    console.log(isLightColor);
 
     useEffect(() => {
         if (swiperInstance) {
@@ -75,7 +82,7 @@ const TimedSlider = ({ slides }) => {
                                     alt={slide?.image?.alt_text || ""}
                                 />
                             )}
-                            <div className="flex flex-col max-w-[487px] w-full bg-white rounded-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
+                            <div className="flex flex-col max-w-[487px] w-full bg-white text-black rounded-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
                                 <span>{`0${i + 1} / 0${slides?.length}`}</span>
                                 <div className="flex flex-col gap-y-[22px] mt-auto">
                                     {checkPropertyExists(slide?.heading) && <h3 className="text-[2rem]">{slide?.heading}</h3>}
@@ -88,7 +95,7 @@ const TimedSlider = ({ slides }) => {
             </Swiper>
             <div className="flex items-center gap-2 w-fit mx-auto mt-20">
                     <button
-                        className="p-3 bg-vibrant-green rounded"
+                        className={`p-3 ${isLightColor ? "border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} rounded transition-all duration-200`}
                         ref={prevBtnRef}
                         type="button"
                         aria-label="Previous Product"
@@ -97,7 +104,7 @@ const TimedSlider = ({ slides }) => {
                         <IndicatorIcon />
                     </button>
                     <button
-                        className="p-3 bg-vibrant-green rounded"
+                        className={`p-3 ${isLightColor ? "border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} rounded transition-all duration-200`}
                         ref={nextBtnRef}
                         type="button"
                         aria-label="Next Product"

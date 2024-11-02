@@ -13,6 +13,7 @@ import { scrollableImage } from "./schemas/scrollableImage";
 import { threeColCards } from "./schemas/threeColCards";
 import { imageGrid } from "./schemas/imageGrid";
 import { textImageGrid } from "./schemas/textImageGrid";
+import { accordion } from "./schemas/accordion";
 
 export const schema = {
     types: [
@@ -31,6 +32,7 @@ export const schema = {
         threeColCards,
         imageGrid,
         textImageGrid,
+        accordion,
         // Add more schema types as needed...
     ],
 };

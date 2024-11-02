@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { checkPropertyExists } from "@/utils/helpers";
+import { getSectionHeaderSubtitleBGColor, getContainerTextColor } from "@/utils/colors";
 import { useInView } from "framer-motion";
 import { SplitText } from "@/utils/splitText";
 import Link from "next/link";
@@ -22,7 +23,7 @@ const SectionHeader = ({ heading = "", subheading = "", description = "", add_co
                 <div className="flex flex-col w-full" style={{
                     maxWidth: max_width?.heading ? `${max_width?.heading}px` : null
                 }}>
-                    {hasSubheading && <strong className="bg-[#F8F8F8] w-fit mx-auto uppercase text-sm font-mono tracking-[0.14em] px-[10px] py-1 mb-6 font-normal">{subheading}</strong>}
+                    {hasSubheading && <strong className={`${getSectionHeaderSubtitleBGColor[backgroundColor] || "bg-[#0000000d]"} w-fit mx-auto uppercase text-sm font-mono tracking-[0.14em] px-[10px] py-1 mb-6 font-normal`}>{subheading}</strong>}
                     <header>
                         {/* <h2 ref={headingRef} className={`section-header__h2 ${headingInView ? "anim" : ""} font-inter font-regular -tracking-[0.02em] leading-[1] text-[4rem]`} dangerouslySetInnerHTML={{ __html: heading }} /> */}
                         {/* <h2 className="section-header__h2 font-inter font-regular -tracking-[0.02em] leading-[1] text-[4rem]">

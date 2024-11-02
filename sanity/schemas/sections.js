@@ -98,6 +98,7 @@ export const sections = defineType({
                         { name: "threeColCards", type: "threeColCards" },
                         { name: "imageGrid", type: "imageGrid" },
                         { name: "textImageGrid", type: "textImageGrid" },
+                        { name: "accordion", type: "accordion" },
                     ],
                     options: {
                         insertMenu: {
@@ -124,6 +125,7 @@ export const sections = defineType({
                                         "threeColCards",
                                         "imageGrid",
                                         "textImageGrid",
+                                        "accordion",
                                     ],
                                 },
                             ],

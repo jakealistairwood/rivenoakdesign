@@ -21,7 +21,7 @@ const ImageGrid = ({ rows }) => {
     return (
         <div className="mt-20">
             {rows?.map((row, i) => (
-                <div key={`image-grid-row-${i}`} className="grid grid-cols-12 gap-4 min-h-[70vh]">
+                <div key={`image-grid-row-${i}`} className="grid grid-cols-12 gap-4 min-h-[60vh]">
                     {row?.items?.map((item, i) => (
                         <div key={`image-grid-row-item-${i}`} className={`${getColSpan[item?.columnWidth]} relative`}>
                             <Image src={urlFor(item?.image?.asset)} alt="" fill className="w-full h-full object-cover" placeholder={item?.image?.placeholder} />

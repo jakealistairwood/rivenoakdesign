@@ -21,3 +21,27 @@ export const getContainerTextColor = {
     "taupe-brown": "text-white",
     ecru: "text-black",
 };
+
+export const getSectionHeaderSubtitleBGColor = {
+    white: "bg-[#EEEEEE]",
+    "carbon-grey": "bg-[#ffffff1a]",
+    "slate-grey": "bg-[#ffffff1a]",
+    "forest-green": "bg-[#ffffff1a]",
+    walnut: "bg-[#ffffff1a]",
+    "slate-green": "bg-[#194230]",
+    cinnamon: "bg-[#ffffff1a]",
+    "taupe-brown": "bg-[#ffffff1a]",
+    ecru: "bg-[#0000000d]",
+};
+
+export const isBgLightColor = {
+    white: true,
+    "carbon-grey": false,
+    "slate-grey": false,
+    "forest-green": false,
+    walnut: false,
+    "slate-green": false,
+    cinnamon: false,
+    "taupe-brown": false,
+    ecru: true,
+};

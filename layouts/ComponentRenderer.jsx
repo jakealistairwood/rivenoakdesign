@@ -13,6 +13,7 @@ const ScrollableImage = dynamic(() => import("@/components/flexible/ScrollableIm
 const ThreeColCards = dynamic(() => import("@/components/flexible/ThreeColCards"));
 const ImageGrid = dynamic(() => import("@/components/flexible/ImageGrid"));
 const TextImageGrid = dynamic(() => import("@/components/flexible/TextImageGrid"));
+const Accordion = dynamic(() => import("@/components/flexible/Accordion"));
 
 const ComponentRenderer = ({ components = [], backgroundColor }) => {
     const renderComponent = (type, props) => {
@@ -30,6 +31,7 @@ const ComponentRenderer = ({ components = [], backgroundColor }) => {
             threeColCards: ThreeColCards,
             imageGrid: ImageGrid,
             textImageGrid: TextImageGrid,
+            accordion: Accordion,
         }[type]
 
         return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} /> : null;

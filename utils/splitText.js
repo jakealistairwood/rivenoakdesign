@@ -27,7 +27,7 @@ export function SplitText({ text }) {
         <span ref={ref}>
             <span className="sr-only">{textArray.join(" ")}</span>
             <motion.span
-                inital="initial"
+                initial="initial"
                 animate={isInView ? "animate" : "initial"}
                 transition={{ staggerChildren: 0.05 }}
                 aria-hidden
