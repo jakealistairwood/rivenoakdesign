@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
+import AnimatedLink from "./animations/AnimatedLink";
 
 const Masthead = (props) => {
     const [imageAnimationsComplete, setImageAnimationsComplete] = useState(false);
@@ -112,8 +113,11 @@ const Masthead = (props) => {
                 </motion.h1> */}
                 {/* {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal">{subheading}</span>} */}
                 <div className="flex items-center justify-center gap-x-4 mt-10 relative z-[2]">
-                    <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">View our products</Link>
-                    <Link className="bg-white/[6%] text-white px-[30px] py-5 rounded-md font-medium text-sm" href="/">About Riven Oak</Link>
+                    {/* <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">
+                        <AnimatedLink hovered={hovered} label="View our Products" />
+                    </Link> */}
+                    <MastheadLink label="View Our Products" classNames="bg-[#E5E0CE] text-walnut" />
+                    <MastheadLink label="About Riven Oak" classNames="bg-white/[6%] text-white" />
                 </div>
                 <div className="absolute grid grid-cols-2 inset-0">
                     <div className="relative">
@@ -142,3 +146,29 @@ const Masthead = (props) => {
 }
 
 export default Masthead;
+
+
+const MastheadLink = ({ label, classNames = "" }) => {
+    const [hovered, setHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    }
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    }
+
+    return (
+        <Link 
+            className={`${classNames} px-[30px] py-5 rounded-md font-medium text-sm`} 
+            href="/"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onFocus={handleMouseEnter}
+            onBlur={handleMouseLeave}
+        >
+            <AnimatedLink hovered={hovered} label={label} />
+        </Link>
+    )
+}

@@ -6,7 +6,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { lineOneAnimation, lineTwoAnimation } from "@/utils/animations";
 import AnimatedLink from "../animations/AnimatedLink";
 
-const NewNavbar = () => {
+const NewNavbar = ({ navbarBg }) => {
     const [hideOnScroll, setHideOnScroll] = useState(false);
     const [animateHeader, setAnimateHeader] = useState(false);
 
@@ -39,6 +39,11 @@ const NewNavbar = () => {
         },
     };
 
+    const bgStyles = {
+        default: animateHeader ? "bg-[#F5F5F5] text-black" : "bg-[#3B3B3B]/30 text-white",
+        white: "bg-[#F5F5F5] text-black",
+    };
+
     return (
         <motion.header
             variants={hideOnScrollAnimation}
@@ -47,7 +52,7 @@ const NewNavbar = () => {
             className="fixed w-full mx-auto left-0 right-0 top-0 z-[999]"
         >
             <div
-                className={`w-full mx-auto ${animateHeader ? "bg-[#F5F5F5] text-black" : "bg-[#3B3B3B]/30 text-white"} transition-colors duration-300 ease-in-out`}
+                className={`w-full mx-auto ${bgStyles[navbarBg]} transition-colors duration-300 ease-in-out`}
             >
                 <div className="container">
                     <div className="flex items-center justify-between py-3">
@@ -72,7 +77,7 @@ const NewNavbar = () => {
                         </nav>
                         <nav className="flex items-center font-body gap-x-8">
                             <NavLink href="/contact" label="Contact Us" />
-                            <NavCTA animateHeader={animateHeader} />
+                            <NavCTA animateHeader={animateHeader} navbarBg={navbarBg} />
                         </nav>
                     </div>
                 </div>
@@ -100,15 +105,21 @@ const NavLink = ({ href, label }) => {
     )
 }
 
-const NavCTA = ({ animateHeader = false }) => {
+const NavCTA = ({ animateHeader = false, navbarBg }) => {
     const [hovered, setHovered] = useState(false);
+    
+    const buttonStyles = {
+        default: animateHeader ? "bg-[#1F1F1F] text-white border border-[#1F1F1F]" : "border border-white/[30%] text-white hover:bg-[#E5E0CE] hover:text-walnut",
+        white: "bg-[#1F1F1F] text-white border border-[#1F1F1F]", 
+    }
+
     return (
         <Link
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onFocus={() => setHovered(true)}
             onBlur={() => setHovered(false)}
-            className={`block tracking-wide text-sm py-3 px-6 font-medium rounded relative ${animateHeader ? "bg-[#1F1F1F] text-white" : "border border-white/[30%] text-white hover:bg-[#E5E0CE] hover:text-walnut"} duration-200 transition-all ease`}
+            className={`block tracking-wide text-sm py-3 px-6 font-medium rounded relative ${buttonStyles[navbarBg]} duration-200 transition-all ease`}
             href="/contact"
         >
             <AnimatedLink hovered={hovered} label="Get in Touch" />

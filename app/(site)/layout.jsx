@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${inter.variable} ${instrumentSerif.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${commitMono.variable}`}>
-                <Navbar />
+                {/* <Navbar /> */}
                 {children}
                 <Footer />
             </body>

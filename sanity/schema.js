@@ -14,6 +14,7 @@ import { threeColCards } from "./schemas/threeColCards";
 import { imageGrid } from "./schemas/imageGrid";
 import { textImageGrid } from "./schemas/textImageGrid";
 import { accordion } from "./schemas/accordion";
+import { aboutUs } from "./schemas/aboutUs";
 
 export const schema = {
     types: [
@@ -33,6 +34,7 @@ export const schema = {
         imageGrid,
         textImageGrid,
         accordion,
+        aboutUs,
         // Add more schema types as needed...
     ],
 };

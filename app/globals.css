@@ -22,6 +22,13 @@
   }
 }
 
+@layer components {
+  .carousel-btn-disabled-hover {
+    @apply !bg-inherit !bg-opacity-30;
+    border-color: currentColor !important;
+  }
+}
+
 html {
   -webkit-font-smoothing: antialiased; /* For WebKit browsers like Chrome and Safari */
   -moz-osx-font-smoothing: grayscale; /* For macOS (Firefox) */
@@ -124,3 +131,18 @@ h1, h2, h3, h4, h5, h6 {
 .section-header .section-header__h2.anim .line .char {
   transform: translate(0px, 0px);
 } */
+
+.prose {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+
+  h3 {
+    @apply text-[2rem] font-normal;
+  }
+}
+
+.carousel-btn:disabled {
+  @apply !opacity-50 hover:carousel-btn-disabled-hover hover:!text-current;
+  /* border-color: currentColor !important; */
+}

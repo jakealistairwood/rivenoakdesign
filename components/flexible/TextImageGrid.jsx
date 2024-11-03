@@ -34,14 +34,14 @@ const TextImageRow = ({ backgroundColor, imageBlock, contentBlock, reverse_direc
     
     // console.log(base64Blur);
     return (
-        <div className="grid grid-cols-12 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
             {imageBlock?.image && (
-                <div className="col-span-4 relative min-h-[535px]">
+                <div className="md:col-span-4 relative min-h-[535px]">
                     <Image src={urlFor(imageBlock?.image?.asset)} alt="" fill className="w-full object-cover" />
                 </div>
             )}
-            <div className={`col-span-8 ${reverse_direction ? "-order-1" : "order-1"} flex flex-col justify-between p-16 ${getBackgroundColor[backgroundColor]} ${getContainerTextColor[backgroundColor]}`}>
-                <span className="text-[7.5rem] leading-[80%] self-end">0{index + 1}</span>
+            <div className={`md:col-span-8 ${reverse_direction ? "-order-1" : "order-1"} flex flex-col gap-y-20 justify-between p-16 ${getBackgroundColor[backgroundColor]} ${getContainerTextColor[backgroundColor]}`}>
+                <span className="text-[2rem] md:text-[7.5rem] leading-[80%] md:self-end">0{index + 1}</span>
                 {checkPropertyExists(contentBlock?.heading) && (
                     <div className="flex flex-col gap-y-6">
                         <h3 className="font-serif text-[4rem]" dangerouslySetInnerHTML={{ __html: contentBlock?.heading}} />

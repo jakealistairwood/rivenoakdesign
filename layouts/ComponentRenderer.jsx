@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 import Masthead from "@/components/Masthead";
+import AboutUs from "@/components/AboutUs";
 
 const SectionHeader = dynamic(() => import("@/components/flexible/SectionHeader"));
 const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
@@ -21,6 +22,7 @@ const ComponentRenderer = ({ components = [], backgroundColor }) => {
 
         const RenderedComponent = {
             masthead: Masthead,
+            aboutUs: AboutUs,
             sectionHeader: SectionHeader,
             productsCarousel: ProductsCarousel,
             tabbedSlider: TabbedSlider,
