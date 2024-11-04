@@ -48,7 +48,7 @@ const ProductsCarousel = (props) => {
 
     return (
         <div className="flex flex-col" id="products-carousel">
-            <div className="relative flex justify-between items-end">
+            <div className="relative flex flex-col md:flex-row justify-between items-end">
                 <SectionHeader {...sectionHeader} />
                 <div className="flex items-center gap-2">
                     <button
@@ -118,7 +118,7 @@ const ProductsCarousel = (props) => {
                     <Swiper
                         onSwiper={setSwiperInstance}
                         modules={[Navigation]}
-                        slidesPerView={3}
+                        slidesPerView={1}
                         spaceBetween={20}
                         navigation={{
                             prevEl: prevBtnRef.current,
@@ -133,6 +133,11 @@ const ProductsCarousel = (props) => {
                             // Disable next button on init if on last slide
                             if (nextBtnRef.current) {
                                 nextBtnRef.current.disabled = swiper.isEnd;
+                            }
+                        }}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 3,
                             }
                         }}
                     >

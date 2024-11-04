@@ -53,6 +53,11 @@ export const page = {
             initialValue: "default",
             group: "pageOptions",
         },
+        {
+            name: "hide_global_cta",
+            type: "boolean",
+            title: "Hide Global CTA?",
+        },
     ],
     preview: {
         select: {

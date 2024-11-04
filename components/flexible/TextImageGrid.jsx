@@ -40,11 +40,11 @@ const TextImageRow = ({ backgroundColor, imageBlock, contentBlock, reverse_direc
                     <Image src={urlFor(imageBlock?.image?.asset)} alt="" fill className="w-full object-cover" />
                 </div>
             )}
-            <div className={`md:col-span-8 ${reverse_direction ? "-order-1" : "order-1"} flex flex-col gap-y-20 justify-between p-16 ${getBackgroundColor[backgroundColor]} ${getContainerTextColor[backgroundColor]}`}>
+            <div className={`md:col-span-8 ${reverse_direction ? "md:-order-1" : "md:order-1"} flex flex-col gap-y-20 justify-between p-8 md:p-16 ${getBackgroundColor[backgroundColor]} ${getContainerTextColor[backgroundColor]}`}>
                 <span className="text-[2rem] md:text-[7.5rem] leading-[80%] md:self-end">0{index + 1}</span>
                 {checkPropertyExists(contentBlock?.heading) && (
                     <div className="flex flex-col gap-y-6">
-                        <h3 className="font-serif text-[4rem]" dangerouslySetInnerHTML={{ __html: contentBlock?.heading}} />
+                        <h3 className="font-serif ~text-[3rem]/[4rem] leading-[100%]" dangerouslySetInnerHTML={{ __html: contentBlock?.heading}} />
                         {checkPropertyExists(contentBlock?.description) && <p className="text-[1.25rem]" dangerouslySetInnerHTML={{ __html: contentBlock?.description}} />}
                     </div>
                 )}

@@ -15,6 +15,7 @@ import { imageGrid } from "./schemas/imageGrid";
 import { textImageGrid } from "./schemas/textImageGrid";
 import { accordion } from "./schemas/accordion";
 import { aboutUs } from "./schemas/aboutUs";
+import { globalOptions } from "./schemas/globalOptions";
 
 export const schema = {
     types: [
@@ -35,6 +36,7 @@ export const schema = {
         textImageGrid,
         accordion,
         aboutUs,
+        globalOptions,
         // Add more schema types as needed...
     ],
 };

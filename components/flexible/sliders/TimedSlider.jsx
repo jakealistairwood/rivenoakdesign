@@ -72,17 +72,26 @@ const TimedSlider = ({ slides, backgroundColor }) => {
             >
                 {slides?.map((slide, i) => (
                     <SwiperSlide key={`timed-slider-item-${i}`}>
-                        <div className="aspect-[1537/741] relative w-full rounded-xl flex justify-end items-end p-8">
-                            {slide?.image?.asset && (
-                                <Image
-                                    src={urlFor(slide?.image?.asset)}
-                                    fill
-                                    objectFit="cover"
-                                    className="w-full h-full absolute inset-0 z-[1] rounded-2xl"
-                                    alt={slide?.image?.alt_text || ""}
-                                />
-                            )}
-                            <div className="flex flex-col max-w-[487px] w-full bg-white text-black rounded-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
+                        <div className="flex flex-col">
+                            <div className="aspect-[1537/741] relative w-full rounded-tl-lg rounded-tr-lg md:rounded-xl flex justify-end items-end p-8">
+                                {slide?.image?.asset && (
+                                    <Image
+                                        src={urlFor(slide?.image?.asset)}
+                                        fill
+                                        objectFit="cover"
+                                        className="w-full h-full absolute inset-0 z-[1] rounded-tl-lg rounded-tr-lg md:rounded-2xl"
+                                        alt={slide?.image?.alt_text || ""}
+                                    />
+                                )}
+                                <div className="hidden md:flex flex-col max-w-[487px] w-full bg-white text-black rounded-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
+                                    <span>{`0${i + 1} / 0${slides?.length}`}</span>
+                                    <div className="flex flex-col gap-y-[22px] mt-auto">
+                                        {checkPropertyExists(slide?.heading) && <h3 className="text-[2rem]">{slide?.heading}</h3>}
+                                        {checkPropertyExists(slide?.description) && <p className="text-black-60" dangerouslySetInnerHTML={{ __html: slide?.description }} />}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex md:hidden flex-col w-full bg-white text-black rounded-bl-lg rounded-br-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
                                 <span>{`0${i + 1} / 0${slides?.length}`}</span>
                                 <div className="flex flex-col gap-y-[22px] mt-auto">
                                     {checkPropertyExists(slide?.heading) && <h3 className="text-[2rem]">{slide?.heading}</h3>}
@@ -95,7 +104,7 @@ const TimedSlider = ({ slides, backgroundColor }) => {
             </Swiper>
             <div className="flex items-center gap-2 w-fit mx-auto mt-20">
                     <button
-                        className={`carousel-btn p-3 ${isLightColor ? "border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} rounded transition-all duration-200`}
+                        className={`carousel-btn ${isLightColor ? "carousel-btn--light border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "carousel-btn--dark bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} p-3 rounded transition-all duration-200`}
                         ref={prevBtnRef}
                         type="button"
                         aria-label="Previous Product"
@@ -104,7 +113,7 @@ const TimedSlider = ({ slides, backgroundColor }) => {
                         <IndicatorIcon />
                     </button>
                     <button
-                        className={`carousel-btn p-3 ${isLightColor ? "border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} rounded transition-all duration-200`}
+                        className={`carousel-btn ${isLightColor ? "carousel-btn--light border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "carousel-btn--dark bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} p-3 rounded transition-all duration-200`}
                         ref={nextBtnRef}
                         type="button"
                         aria-label="Next Product"

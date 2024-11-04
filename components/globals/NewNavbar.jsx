@@ -63,7 +63,7 @@ const NewNavbar = ({ navbarBg }) => {
                             >
                                 Riven Oak Design.
                             </Link>
-                            <menu className="flex items-center gap-x-10 font-body text-xs font-medium">
+                            <menu className="hidden md:flex items-center gap-x-10 font-body text-xs font-medium">
                                 <li>
                                     <NavLink href="/" label="Home" />
                                 </li>
@@ -75,7 +75,7 @@ const NewNavbar = ({ navbarBg }) => {
                                 </li>
                             </menu>
                         </nav>
-                        <nav className="flex items-center font-body gap-x-8">
+                        <nav className="hidden md:flex items-center font-body gap-x-8">
                             <NavLink href="/contact" label="Contact Us" />
                             <NavCTA animateHeader={animateHeader} navbarBg={navbarBg} />
                         </nav>

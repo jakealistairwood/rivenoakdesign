@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const Footer = (props) => {
     return (
-        <footer className="bg-[#191919] text-white py-[120px]">
+        <footer className="text-black pb-[120px]">
             <div className="container">
-                <div className="grid grid-cols-12">
-                    <div className="col-span-6">
+                <div className="flex flex-col md:grid md:grid-cols-12">
+                    <div className="md:col-span-6">
                         <Link href="/" aria-label="Go to homepage">
                             <svg
                                 width="259"
@@ -22,7 +22,7 @@ const Footer = (props) => {
                             </svg>
                         </Link>
                     </div>
-                    <div className="col-span-6 flex gap-20 justify-between">
+                    <div className="flex md:col-span-6 gap-20 justify-between">
                         <nav>
                             <h5 className="font-heading text-sm uppercase font-bold tracking-[0.24em]">
                                 Site
@@ -31,7 +31,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         Home
                                     </Link>
@@ -39,7 +39,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         About
                                     </Link>
@@ -47,7 +47,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         Portfolio
                                     </Link>
@@ -55,7 +55,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>
@@ -70,7 +70,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Home
                                     </Link>
@@ -78,7 +78,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         About
                                     </Link>
@@ -86,7 +86,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Portfolio
                                     </Link>
@@ -94,7 +94,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>
@@ -109,7 +109,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Home
                                     </Link>
@@ -117,7 +117,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         About
                                     </Link>
@@ -125,7 +125,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Portfolio
                                     </Link>
@@ -133,7 +133,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-white-80 hover:text-white"
+                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>

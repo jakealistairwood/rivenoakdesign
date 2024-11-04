@@ -29,7 +29,7 @@ const SectionHeader = ({ heading = "", subheading = "", description = "", add_co
                         {/* <h2 className="section-header__h2 font-inter font-regular -tracking-[0.02em] leading-[1] text-[4rem]">
                             {heading.split("").join(" ")}
                         </h2> */}
-                        <h2 className={`section-header__h2 ${headingInView ? "anim" : ""} font-serif font-regular -tracking-[0.02em] leading-[1] text-[5rem]`}>
+                        <h2 className={`section-header__h2 ${headingInView ? "anim" : ""} font-serif font-regular -tracking-[0.02em] leading-[1] ~text-[3rem]/[5rem]`}>
                             <SplitText text={heading} />
                         </h2>
                     </header>

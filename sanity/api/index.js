@@ -54,48 +54,6 @@ export const fetchPageData = async (slug) => {
     const params = { slug };
     const data = await client.fetch(query, params);
 
-    // Process sections to add placeholders to any images found
-    // if (data?.sections) {
-    //     data.sections = await Promise.all(
-    //         data.sections.map(async (section) => {
-    //             if (section.components) {
-    //                 // Iterate through components to find image blocks
-    //                 // console.log(section.components);
-    //                 section.components = await Promise.all(
-    //                     section.components.map(async (component) => {
-    //                         const textImageGrid =
-    //                             component._type === "textImageGrid";
-    //                         if (!textImageGrid) return component;
-    //                         // Process each row's image asynchronously
-    //                         component.rows = await Promise.all(
-    //                             component.rows.map(async (row) => {
-    //                                 if (row.imageBlock?.image?.asset) {
-    //                                     const blurUrl = urlFor(
-    //                                         row.imageBlock.image.asset
-    //                                     );
-    //                                     const response = await fetch(blurUrl);
-    //                                     const arrayBuffer =
-    //                                         await response.arrayBuffer();
-    //                                     const buffer = Buffer.from(arrayBuffer);
-    //                                     const { base64 } =
-    //                                         await getPlaiceholder(buffer); // Await getPlaiceholder
-    //                                     row.imageBlock.placeholder = base64;
-    //                                 }
-    //                                 return row;
-    //                             })
-    //                         );
-    //                         return component;
-    //                     })
-    //                 );
-    //             }
-    //             return section;
-    //         })
-    //     );
-    // }
-
-    // return data;
-    // return await client.fetch(query, params);
-
     // Process all images within each component recursively
     if (data?.sections) {
         data.sections = await Promise.all(
@@ -112,19 +70,6 @@ export const fetchPageData = async (slug) => {
             })
         );
     }
-    // if (data?.sections) {
-    //     data?.sections = await Promise.all(
-    //         data.sections.map(async (section) => {
-    //             if (section.components) {
-    //                 await Promise.all(
-    //                     section.components.map(async (component) => {
-    //                         await processImagesRecursively(component);
-    //                     })
-    //                 );
-    //             }
-    //         })
-    //     );
-    // }
 
     return data;
 };
@@ -161,4 +106,14 @@ export const fetchNavbarColor = async (slug) => {
 
     const params = { slug };
     return await client.fetch(query, params);
+};
+
+export const fetchGlobalOptions = async () => {
+    const query = `
+        *[_type == "globalOptions"] {
+            ...
+        }[0]
+    `;
+
+    return await client.fetch(query);
 };

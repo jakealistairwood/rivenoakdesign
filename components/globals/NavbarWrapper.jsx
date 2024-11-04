@@ -38,7 +38,7 @@ const NavbarWrapper = () => {
                     <div className="flex items-center justify-between py-3">
                         <nav className="flex items-center gap-x-[110px] uppercase">
                             <Link className="uppercase font-heading tracking-[0.28em] font-medium text-xl" href="/">Riven Oak.</Link>
-                            <menu className="flex items-center gap-x-12 font-mono text-xs font-bold">
+                            <menu className="hidden md:flex items-center gap-x-12 font-mono text-xs font-bold">
                                 <li>
                                     <Link className="nav-link" href="/">Home</Link>
                                 </li>

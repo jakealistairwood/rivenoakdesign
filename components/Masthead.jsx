@@ -102,7 +102,7 @@ const Masthead = (props) => {
     return (
         <header className="min-h-screen flex flex-col items-center justify-center text-center">
             <div className="max-w-[1019px] w-full mx-auto pt-20 relative" ref={containerRef}>
-                <h1 className="font-serif text-[5.5rem] -tracking-[2%] leading-[100%] relative z-[2]">{heading}</h1>
+                <h1 className="font-serif ~text-[3.5rem]/[5.5rem] -tracking-[2%] leading-[100%] relative z-[2]">{heading}</h1>
                 {/* <motion.h1 
                     className={`uppercase text-[8.25rem] leading-[0.83] font-heading font-black flex flex-col relative z-[2] text-mask ${isInView ? "text-mask-anim" : ""}`}
                 >

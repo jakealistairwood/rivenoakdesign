@@ -146,3 +146,11 @@ h1, h2, h3, h4, h5, h6 {
   @apply !opacity-50 hover:carousel-btn-disabled-hover hover:!text-current;
   /* border-color: currentColor !important; */
 }
+
+.carousel-btn--light:disabled {
+  @apply !border-none hover:!border-none;
+}
+
+.carousel-btn--dark:disabled {
+  @apply !border-black/30 hover:!border-black/30;
+}

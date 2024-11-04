@@ -9,7 +9,7 @@ export default async function About() {
     <>
         <Navbar navbarBg="default" />
         <main>
-        <LayoutRenderer page={data} />
+            <LayoutRenderer page={data} />
         </main>
     </>
   )
