@@ -4,6 +4,11 @@ export const globalOptions = {
     title: "Global Options",
     fields: [
         {
+            name: "title",
+            type: "string",
+            title: "Title",
+        },
+        {
             name: "cta_block",
             type: "object",
             title: "CTA Block",
@@ -45,6 +50,17 @@ export const globalOptions = {
                             ],
                         },
                     ],
+                },
+            ],
+        },
+        {
+            name: "faq_block",
+            type: "object",
+            title: "FAQ Block",
+            fields: [
+                {
+                    name: "sectionHeader",
+                    type: "sectionHeader",
                 },
             ],
         },

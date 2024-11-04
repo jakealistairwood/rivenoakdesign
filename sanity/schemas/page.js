@@ -57,6 +57,15 @@ export const page = {
             name: "hide_global_cta",
             type: "boolean",
             title: "Hide Global CTA?",
+            group: "pageOptions",
+            initialValue: false,
+        },
+        {
+            name: "hide_faqs",
+            type: "boolean",
+            title: "Hide FAQs?",
+            group: "pageOptions",
+            initialValue: false,
         },
     ],
     preview: {

@@ -16,6 +16,7 @@ import { textImageGrid } from "./schemas/textImageGrid";
 import { accordion } from "./schemas/accordion";
 import { aboutUs } from "./schemas/aboutUs";
 import { globalOptions } from "./schemas/globalOptions";
+import { faqs } from "./schemas/faqs";
 
 export const schema = {
     types: [
@@ -37,6 +38,7 @@ export const schema = {
         accordion,
         aboutUs,
         globalOptions,
+        faqs,
         // Add more schema types as needed...
     ],
 };

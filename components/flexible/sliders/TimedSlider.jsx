@@ -91,10 +91,10 @@ const TimedSlider = ({ slides, backgroundColor }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex md:hidden flex-col w-full bg-white text-black rounded-bl-lg rounded-br-lg relative z-[2] right-0 bottom-0 p-10 lg:min-h-[300px]">
+                            <div className="flex md:hidden flex-col gap-y-6 w-full bg-white text-black rounded-bl-lg rounded-br-lg relative z-[2] right-0 bottom-0 px-6 py-8 lg:min-h-[300px]">
                                 <span>{`0${i + 1} / 0${slides?.length}`}</span>
                                 <div className="flex flex-col gap-y-[22px] mt-auto">
-                                    {checkPropertyExists(slide?.heading) && <h3 className="text-[2rem]">{slide?.heading}</h3>}
+                                    {checkPropertyExists(slide?.heading) && <h3 className="~text-[1.5rem]/[2rem]">{slide?.heading}</h3>}
                                     {checkPropertyExists(slide?.description) && <p className="text-black-60" dangerouslySetInnerHTML={{ __html: slide?.description }} />}
                                 </div>
                             </div>

@@ -48,27 +48,29 @@ const ProductsCarousel = (props) => {
 
     return (
         <div className="flex flex-col" id="products-carousel">
-            <div className="relative flex flex-col md:flex-row justify-between items-end">
+            <div className="relative flex flex-col md:flex-row justify-between md:items-end gap-y-8">
                 <SectionHeader {...sectionHeader} />
-                <div className="flex items-center gap-2">
-                    <button
-                        className="p-3 border border-black/20 enabled:group-hover:bg-vibrant-green rounded group relative overflow-hidden carousel-btn"
-                        ref={prevBtnRef}
-                        type="button"
-                        aria-label="Previous Product"
-                        disabled
-                    >
-                        <div className="bg-vibrant-green opacity-0 absolute inset-0 h-full w-full enabled:group-hover:opacity-100 duration-300 ease z-[1]" />
-                        <IndicatorIcon />
-                    </button>
-                    <button
-                        className="p-3 border border-black/20 rounded carousel-btn"
-                        ref={nextBtnRef}
-                        type="button"
-                        aria-label="Next Product"
-                    >
-                        <IndicatorIcon rotate />
-                    </button>
+                <div className="flex flex-row-reverse md:flex-row justify-between md:justify-normal items-center gap-2">
+                    <div className="flex items-center gap-2">
+                        <button
+                            className="p-3 border border-black/20 enabled:group-hover:bg-vibrant-green rounded group relative overflow-hidden carousel-btn"
+                            ref={prevBtnRef}
+                            type="button"
+                            aria-label="Previous Product"
+                            disabled
+                        >
+                            <div className="bg-vibrant-green opacity-0 absolute inset-0 h-full w-full enabled:group-hover:opacity-100 duration-300 ease z-[1]" />
+                            <IndicatorIcon />
+                        </button>
+                        <button
+                            className="p-3 border border-black/20 rounded carousel-btn"
+                            ref={nextBtnRef}
+                            type="button"
+                            aria-label="Next Product"
+                        >
+                            <IndicatorIcon rotate />
+                        </button>
+                    </div>
                     <Link
                         className="flex items-center gap-x-2 ml-4"
                         href="/products"
@@ -137,7 +139,10 @@ const ProductsCarousel = (props) => {
                         }}
                         breakpoints={{
                             640: {
-                                slidesPerView: 3,
+                                slidesPerView: 2,
+                            },
+                            992: {
+                                slidesPerView: 3
                             }
                         }}
                     >

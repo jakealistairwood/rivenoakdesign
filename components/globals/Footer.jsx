@@ -24,14 +24,14 @@ const Footer = (props) => {
                     </div>
                     <div className="flex md:col-span-6 gap-20 justify-between">
                         <nav>
-                            <h5 className="font-heading text-sm uppercase font-bold tracking-[0.24em]">
+                            <h5 className="font-body text-base font-medium">
                                 Site
                             </h5>
-                            <menu className="mt-10 font-mono flex flex-col text-sm gap-y-6">
+                            <menu className="mt-10 font-body flex flex-col text-sm gap-y-6">
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         Home
                                     </Link>
@@ -39,7 +39,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         About
                                     </Link>
@@ -47,7 +47,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-white"
                                     >
                                         Portfolio
                                     </Link>
@@ -55,7 +55,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>
@@ -63,14 +63,14 @@ const Footer = (props) => {
                             </menu>
                         </nav>
                         <nav>
-                            <h5 className="font-heading text-sm uppercase font-bold tracking-[0.24em]">
+                            <h5 className="font-body text-base font-medium">
                                 Products
                             </h5>
-                            <menu className="mt-10 font-mono flex flex-col text-sm gap-y-6">
+                            <menu className="mt-10 font-body flex flex-col text-sm gap-y-6">
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Home
                                     </Link>
@@ -78,7 +78,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         About
                                     </Link>
@@ -86,7 +86,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Portfolio
                                     </Link>
@@ -94,7 +94,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>
@@ -102,14 +102,14 @@ const Footer = (props) => {
                             </menu>
                         </nav>
                         <nav>
-                            <h5 className="font-heading text-sm uppercase font-bold tracking-[0.24em]">
+                            <h5 className="font-body text-base font-medium">
                                 Products
                             </h5>
-                            <menu className="mt-10 font-mono flex flex-col text-sm gap-y-6">
+                            <menu className="mt-10 font-body flex flex-col text-sm gap-y-6">
                                 <li>
                                     <Link
                                         href="/"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Home
                                     </Link>
@@ -117,7 +117,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/about"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         About
                                     </Link>
@@ -125,7 +125,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/portfolio"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Portfolio
                                     </Link>
@@ -133,7 +133,7 @@ const Footer = (props) => {
                                 <li>
                                     <Link
                                         href="/contact"
-                                        className="uppercase tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
+                                        className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                     >
                                         Contact
                                     </Link>

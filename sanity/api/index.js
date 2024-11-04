@@ -48,7 +48,8 @@ export const fetchPageData = async (slug) => {
                         ...,
                     }
                 }
-            }
+            },
+            hide_global_cta
         }[0]
     `;
     const params = { slug };
@@ -113,6 +114,20 @@ export const fetchGlobalOptions = async () => {
         *[_type == "globalOptions"] {
             ...
         }[0]
+    `;
+
+    return await client.fetch(query);
+};
+
+export const fetchFAQs = async () => {
+    const query = `
+    *[_type == "faqs"]{
+        ...,
+        _id,
+        _type,
+        question,
+        answer
+    }
     `;
 
     return await client.fetch(query);

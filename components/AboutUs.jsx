@@ -20,7 +20,7 @@ const AboutUs = ({ masthead, content }) => {
                 </div>
             )} */}
             <section className="relative bg-white text-black py-[7.5rem]">
-                <article className="max-w-[62ch] w-full mx-auto flex flex-col gap-y-10">
+                <article className="max-w-[62ch] w-full mx-auto flex flex-col gap-y-10 pl-4">
                     {checkPropertyExists(content?.heading) && (
                         <h2 className="text-[1.65rem] font-serif" dangerouslySetInnerHTML={{ __html: content?.heading }} />
                     )}
