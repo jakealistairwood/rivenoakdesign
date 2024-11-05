@@ -7,7 +7,7 @@ import AnimatedLink from "../animations/AnimatedLink";
 
 const CTA = ({ heading = "", description = "", links }) => {
     return (
-        <section className="pt-[2rem] pb-20 md:pb-[10rem]">
+        <section className="md:pt-[2rem] pb-20 md:pb-[10rem]">
             <div className="container">
                 <div className="flex flex-col items-center text-center bg-slate-green text-white py-20 px-6 rounded-[3px]">
                     {checkPropertyExists(heading) && (

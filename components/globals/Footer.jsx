@@ -6,13 +6,22 @@ import { checkPropertyExists } from "@/utils/helpers";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
-const Footer = ({ basePages, productPages, socials }) => {
+const Footer = ({ basePages, productPages, socials, contactDetails }) => {
+    const { address, email, phone } = contactDetails || {};
+    const hasAddress = checkPropertyExists(address?.addressLine1);
+    const hasEmail = checkPropertyExists(email);
+    const hasPhone = checkPropertyExists(phone);
+
+    const renderAddress = hasAddress || hasPhone || hasEmail;
+
+    console.log(hasEmail);
+
     return (
         <footer className="text-black pb-[120px]">
             <div className="container">
                 <div className="flex flex-col">
                     <div className="flex flex-col md:grid md:grid-cols-12 gap-y-20 md:gap-y-0">
-                        <div className="md:col-span-7">
+                        <div className="md:col-span-7 flex flex-col justify-between">
                             <Link href="/" aria-label="Go to homepage">
                                 <svg
                                     width="259"
@@ -27,6 +36,22 @@ const Footer = ({ basePages, productPages, socials }) => {
                                     />
                                 </svg>
                             </Link>
+                            {renderAddress && (
+                                <div className="hidden md:flex flex-col gap-y-10">
+                                    <address className="flex flex-col opacity-80 font-body text-sm !not-italic">
+                                        <span>{address?.addressLine1},</span>
+                                        {checkPropertyExists(address?.addressLine2) && <span>{address?.addressLine2},</span>}
+                                        {checkPropertyExists(address?.city) && <span>{address?.city},</span>}
+                                        {checkPropertyExists(address?.postcode) && <span>{address?.postcode}</span>}
+                                    </address>
+                                    {(hasEmail || hasPhone) && (
+                                        <address className="flex flex-col !not-italic font-body text-sm">
+                                            {hasEmail && <Link className="opacity-80 hover:opacity-100 transition-opacity duration-200 tracking-wide" href={`mailto:${email}`}>{email}</Link>}
+                                            {hasPhone && <Link className="opacity-80 hover:opacity-100 transition-opacity duration-200" href={`tel:${phone.replace(/ /g,'')}`}>{phone}</Link>}
+                                        </address>
+                                    )}
+                                </div>
+                            )}
                         </div>
                         <div className="flex flex-wrap md:flex-nowrap md:col-span-5 gap-20 justify-between">
                             <nav>
@@ -78,10 +103,26 @@ const Footer = ({ basePages, productPages, socials }) => {
                                 </nav>
                             )}
                         </div>
+                        {renderAddress && (
+                            <div className="flex md:hidden flex-row justify-between gap-x-10 gap-y-10">
+                                <address className="flex flex-col opacity-80 font-body text-sm !not-italic">
+                                    <span>{address?.addressLine1},</span>
+                                    {checkPropertyExists(address?.addressLine2) && <span>{address?.addressLine2},</span>}
+                                    {checkPropertyExists(address?.city) && <span>{address?.city},</span>}
+                                    {checkPropertyExists(address?.postcode) && <span>{address?.postcode}</span>}
+                                </address>
+                                {(hasEmail || hasPhone) && (
+                                    <address className="flex flex-col !not-italic font-body text-sm">
+                                        {hasEmail && <Link className="opacity-80 hover:opacity-100 transition-opacity duration-200 tracking-wide" href={`mailto:${email}`}>{email}</Link>}
+                                        {hasPhone && <Link className="opacity-80 hover:opacity-100 transition-opacity duration-200" href={`tel:${phone.replace(/ /g,'')}`}>{phone}</Link>}
+                                    </address>
+                                )}
+                            </div>
+                        )}
                     </div>
                     <div className="flex flex-row gap-x-10 flex-wrap items-center justify-between pt-20 mt-20 border-t border-black/5 gap-y-4">
-                        <small>2024 All Rights Reserved.</small>
-                        <small>Designed & Developed by <a className="font-medium underline" href="https://www.linkedin.com/in/jake-wood-726141114/" target="_blank" rel="noopener noreferrer">Jake Wood</a></small>
+                        <small className="font-body opacity-70">2024 All Rights Reserved.</small>
+                        <small className="font-body opacity-70">Designed & Developed by <a className="font-medium underline" href="https://www.linkedin.com/in/jake-wood-726141114/" target="_blank" rel="noopener noreferrer">Jake Wood</a></small>
                     </div>
                 </div>
             </div>

@@ -40,6 +40,7 @@ const ProductPage = ({ product, otherProducts }) => {
                             {thumbnail?.asset && <Image src={urlFor(thumbnail?.asset)} alt="" fill className="w-full object-cover" />}    
                         </div>
                         <div className="flex flex-col gap-y-4">
+                            <strong className="bg-[#0000000d] text-black w-fit uppercase text-sm font-mono tracking-[0.14em] px-[10px] py-1 mb-2 font-normal">Product</strong>
                             <h1 className="font-serif text-[4.5rem]">{title}</h1>
                             {/* {excerpt && excerpt.length > 0 && (
                                 <p className="text-[1.125rem] leading-[1.6] text-gray-700">

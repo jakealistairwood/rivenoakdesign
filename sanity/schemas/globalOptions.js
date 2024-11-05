@@ -9,6 +9,55 @@ export const globalOptions = {
             title: "Title",
         },
         {
+            name: "contactDetails",
+            type: "object",
+            title: "Contact Details",
+            fields: [
+                {
+                    name: "address",
+                    type: "object",
+                    title: "Address",
+                    fields: [
+                        {
+                            name: "addressLine1",
+                            type: "string",
+                            title: "Address Line 1",
+                        },
+                        {
+                            name: "addressLine2",
+                            type: "string",
+                            title: "Address Line 2",
+                        },
+                        {
+                            name: "city",
+                            type: "string",
+                            title: "City",
+                        },
+                        {
+                            name: "county",
+                            type: "string",
+                            title: "County",
+                        },
+                        {
+                            name: "postcode",
+                            type: "string",
+                            title: "Postcode",
+                        },
+                    ],
+                },
+                {
+                    name: "phone",
+                    type: "string",
+                    title: "Phone",
+                },
+                {
+                    name: "email",
+                    type: "string",
+                    title: "Email",
+                },
+            ],
+        },
+        {
             name: "socials",
             type: "array",
             title: "Socials",

@@ -9,7 +9,7 @@ const AboutUs = ({ masthead, content }) => {
     return (
         <>
             <section className="bg-walnut pt-[164px] text-white relative">
-                <div className="max-w-[630px] w-full mx-auto flex flex-col gap-y-4 items-center text-center pb-[7.5rem]">
+                <div className="max-w-[630px] w-full mx-auto flex flex-col gap-y-4 items-center text-center pb-20 md:pb-[7.5rem]">
                     <h1 className="font-serif ~text-[5rem]/[10rem] leading-[100%]">{heading}</h1>
                     {checkPropertyExists(description) && <p className="max-w-[62ch]" dangerouslySetInnerHTML={{ __html: description}} />}
                 </div>
@@ -19,7 +19,7 @@ const AboutUs = ({ masthead, content }) => {
                     <Image src={urlFor(image?.asset)} alt={image?.alt_text} fill className="object-contain w-full" priority placeholder={image?.placeholder} />
                 </div>
             )} */}
-            <section className="relative bg-white text-black py-[7.5rem]">
+            <section className="relative bg-white text-black py-20 md:py-[7.5rem]">
                 <article className="max-w-[62ch] w-full mx-auto flex flex-col gap-y-10 pl-4">
                     {checkPropertyExists(content?.heading) && (
                         <h2 className="text-[1.65rem] font-serif" dangerouslySetInnerHTML={{ __html: content?.heading }} />

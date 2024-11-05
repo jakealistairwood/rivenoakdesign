@@ -64,7 +64,7 @@ const NewNavbar = ({ navbarBg }) => {
                     <div className="flex items-center justify-between py-3">
                         <nav className="flex justify-between md:justify-normal items-center gap-x-[110px] w-full md:w-fit">
                             <Link
-                                className="uppercase font-heading tracking-[0.28em] font-medium text-lg pointer-events-none"
+                                className="uppercase font-heading tracking-[0.28em] font-medium text-[0.875rem] lg:text-[1rem] pointer-events-none"
                                 href="/"
                             >
                                 Riven Oak Design.
