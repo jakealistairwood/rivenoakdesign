@@ -19,7 +19,7 @@ const FAQs = ({ faqOptions, faqs }) => {
 
     return (
         <section className="relative bg-white text-black">
-            <div className="container py-[120px]">
+            <div className="container py-20 md:py-[120px]" id="faqs">
                 <SectionHeader {...sectionHeader} />
                 <Accordion accordion_items={accordion_items} />
             </div>

@@ -9,6 +9,7 @@ import AnimatedLink from "../animations/AnimatedLink";
 const NewNavbar = ({ navbarBg }) => {
     const [hideOnScroll, setHideOnScroll] = useState(false);
     const [animateHeader, setAnimateHeader] = useState(false);
+    const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
     const { scrollY } = useScroll();
 
@@ -44,6 +45,11 @@ const NewNavbar = ({ navbarBg }) => {
         white: "bg-[#F5F5F5] text-black",
     };
 
+    const hamburgerStyles = {
+        default: animateHeader ? "bg-black" : "bg-white",
+        white: "bg-black",
+    }
+
     return (
         <motion.header
             variants={hideOnScrollAnimation}
@@ -56,7 +62,7 @@ const NewNavbar = ({ navbarBg }) => {
             >
                 <div className="container">
                     <div className="flex items-center justify-between py-3">
-                        <nav className="flex items-center gap-x-[110px]">
+                        <nav className="flex justify-between md:justify-normal items-center gap-x-[110px] w-full md:w-fit">
                             <Link
                                 className="uppercase font-heading tracking-[0.28em] font-medium text-lg pointer-events-none"
                                 href="/"
@@ -74,12 +80,36 @@ const NewNavbar = ({ navbarBg }) => {
                                     <NavLink href="/about" label="About" />
                                 </li>
                             </menu>
+                            <button 
+                                type="button" 
+                                className="flex md:hidden flex-col items-center justify-center gap-y-[6px]"
+                                onClick={() => setOpenMobileMenu(!openMobileMenu)}
+                            >
+                                <div className={`h-[1px] w-[24px] ${hamburgerStyles[navbarBg]}`}></div>
+                                <div className={`h-[1px] w-[24px] ${hamburgerStyles[navbarBg]}`}></div>
+                                <div className={`h-[1px] w-[24px] ${hamburgerStyles[navbarBg]}`}></div>
+                            </button>
                         </nav>
                         <nav className="hidden md:flex items-center font-body gap-x-8">
                             <NavLink href="/contact" label="Contact Us" />
                             <NavCTA animateHeader={animateHeader} navbarBg={navbarBg} />
                         </nav>
                     </div>
+                    {openMobileMenu && (
+                        <nav className="pt-8 pb-10">
+                            <menu className="flex flex-col font-body text-xs font-medium">
+                                <li className="py-4">
+                                    <NavLink href="/" label="Home" />
+                                </li>
+                                <li className="py-4">
+                                    <NavLink href="/products" label="Products" />
+                                </li>
+                                <li className="py-4">
+                                    <NavLink href="/about" label="About" />
+                                </li>
+                            </menu>
+                        </nav>
+                    )}
                 </div>
             </div>
         </motion.header>

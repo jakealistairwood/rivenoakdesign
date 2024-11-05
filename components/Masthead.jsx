@@ -133,7 +133,7 @@ const Masthead = (props) => {
                         </motion.div>}
                     </div>
                     <div className="relative">
-                        {right_block?.image_two && <motion.div variants={imageOneAnimation} initial={pageVisited ? finalImagesAnimationState : "initial"} animate="animate" onAnimationComplete={() => setImageAnimationsComplete(true)} className="max-w-[332px] w-full absolute -bottom-20 -right-[160px]" custom={2.8}>
+                        {right_block?.image_two && <motion.div variants={imageOneAnimation} initial={pageVisited ? finalImagesAnimationState : "initial"} animate="animate" onAnimationComplete={() => setImageAnimationsComplete(true)} className="max-w-[230px] md:max-w-[332px] w-full right-0 -bottom-[200px] absolute md:-bottom-20 md:-right-[160px]" custom={2.8}>
                             <div className="aspect-[332/227] relative">
                                 <Image src={urlFor(right_block?.image_two?.asset)} alt="" fill priority placeholder={right_block?.image_two?.placeholder} />
                             </div>    

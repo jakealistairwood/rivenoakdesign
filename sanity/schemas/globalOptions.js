@@ -9,6 +9,34 @@ export const globalOptions = {
             title: "Title",
         },
         {
+            name: "socials",
+            type: "array",
+            title: "Socials",
+            of: [
+                {
+                    name: "social",
+                    type: "object",
+                    fields: [
+                        {
+                            name: "title",
+                            type: "string",
+                            title: "Title",
+                        },
+                        {
+                            name: "icon",
+                            type: "image",
+                            title: "Icon",
+                        },
+                        {
+                            name: "url",
+                            type: "string",
+                            title: "URL",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
             name: "cta_block",
             type: "object",
             title: "CTA Block",

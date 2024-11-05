@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { isBgLightColor } from "@/utils/colors";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -13,7 +15,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const ProductsCarousel = (props) => {
-    const { sectionHeader, products } = props;
+    const { sectionHeader, products, backgroundColor } = props;
 
     const hasProducts = checkPropertyExists(products);
 
@@ -22,6 +24,8 @@ const ProductsCarousel = (props) => {
     const nextBtnRef = useRef(null);
 
     const [swiperInstance, setSwiperInstance] = useState(null);
+
+    const isLightColor = isBgLightColor[backgroundColor];
 
     useEffect(() => {
         if (swiperInstance) {
@@ -53,17 +57,16 @@ const ProductsCarousel = (props) => {
                 <div className="flex flex-row-reverse md:flex-row justify-between md:justify-normal items-center gap-2">
                     <div className="flex items-center gap-2">
                         <button
-                            className="p-3 border border-black/20 enabled:group-hover:bg-vibrant-green rounded group relative overflow-hidden carousel-btn"
+                            className={`carousel-btn ${isLightColor ? "carousel-btn--light border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "carousel-btn--dark bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} p-3 rounded transition-all duration-200`}
                             ref={prevBtnRef}
                             type="button"
                             aria-label="Previous Product"
                             disabled
                         >
-                            <div className="bg-vibrant-green opacity-0 absolute inset-0 h-full w-full enabled:group-hover:opacity-100 duration-300 ease z-[1]" />
                             <IndicatorIcon />
                         </button>
                         <button
-                            className="p-3 border border-black/20 rounded carousel-btn"
+                            className={`carousel-btn ${isLightColor ? "carousel-btn--light border border-black/30 text-black bg-transparent hover:bg-black hover:text-white hover:border-black/100" : "carousel-btn--dark bg-transparent border border-white/30 text-white hover:bg-white hover:text-black hover:border-white/100"} p-3 rounded transition-all duration-200`}
                             ref={nextBtnRef}
                             type="button"
                             aria-label="Next Product"
@@ -75,7 +78,7 @@ const ProductsCarousel = (props) => {
                         className="flex items-center gap-x-2 ml-4"
                         href="/products"
                     >
-                        <button class="group relative inline-flex items-center justify-center rounded-md bg-transparent font-medium text-black">
+                        <button class={`group relative inline-flex items-center justify-center rounded-md bg-transparent font-medium ${isLightColor ? "text-black" : "text-white"}`}>
                             <span>View all</span>
                             <div class="relative ml-1 h-5 w-5 overflow-hidden">
                                 <div class="absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-4">
@@ -116,7 +119,7 @@ const ProductsCarousel = (props) => {
                 </div>
             </div>
             {hasProducts && (
-                <div className="mt-20" ref={containerRef}>
+                <div className="mt-12 md:mt-20" ref={containerRef}>
                     <Swiper
                         onSwiper={setSwiperInstance}
                         modules={[Navigation]}

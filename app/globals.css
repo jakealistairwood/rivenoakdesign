@@ -37,6 +37,7 @@ html {
 
 html, body {
   font-family: var(--font-body);
+  scroll-behavior: smooth;
 }
 
 .body--fixed {
@@ -44,6 +45,12 @@ html, body {
   inset: 0;
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 1439px) {
+  .container {
+    max-width: 100% !important;
+  }
 }
 
 .font-heading {
@@ -71,7 +78,7 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply leading-[1.1];
+  @apply leading-[100%];
 }
 
 .text-mask .line {

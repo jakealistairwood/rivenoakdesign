@@ -1,8 +1,9 @@
 import { Inter, Bebas_Neue } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
-import Navbar from "@/components/globals/Navbar";
-import Footer from "@/components/globals/Footer";
+// import Navbar from "@/components/globals/Navbar";
+// import Footer from "@/components/globals/Footer";
+import FooterWrapper from "@/components/globals/FooterWrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
 const bebasNeue = Bebas_Neue({subsets: ["latin"], weight: ["400"], variable: "--font-subheading" });
@@ -81,7 +82,8 @@ export default function RootLayout({ children }) {
             <body className={`${inter.variable} ${instrumentSerif.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${commitMono.variable}`}>
                 {/* <Navbar /> */}
                 {children}
-                <Footer />
+                <FooterWrapper />
+                {/* <Footer /> */}
             </body>
         </html>
     );

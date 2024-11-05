@@ -132,3 +132,27 @@ export const fetchFAQs = async () => {
 
     return await client.fetch(query);
 };
+
+export const fetchBasePages = async () => {
+    const query = `
+        *[_type == "page"]{
+            _id,
+            title,
+            "slug": slug.current
+        }
+    `;
+
+    return await client.fetch(query);
+};
+
+export const fetchProductPages = async () => {
+    const query = `
+        *[_type == "products"]{
+            _id,
+            title,
+            "slug": slug.current
+        }
+    `;
+
+    return await client.fetch(query);
+};

@@ -6,7 +6,7 @@ const Accordion = ({ accordion_items }) => {
     return (
         renderAccordion && (
             <div
-                className="accordion flex flex-col mt-20"
+                className="accordion flex flex-col mt-12 md:mt-20"
                 aria-multiselectable
                 role="tablist"
             >

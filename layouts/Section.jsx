@@ -7,12 +7,12 @@ const Section = memo((props) => {
 
     const getPaddingTop = {
         none: "pt-0",
-        normal: "pt-[120px]",
+        normal: "pt-20 md:pt-[120px]",
     }
 
     const getPaddingBottom = {
         none: "pb-0",
-        normal: "pb-[120px]",
+        normal: "pb-20 md:pb-[120px]",
     }
 
     let containerClasses = [

@@ -22,7 +22,6 @@ const TimedSlider = ({ slides, backgroundColor }) => {
     const [swiperInstance, setSwiperInstance] = useState(null);
 
     const isLightColor = isBgLightColor[backgroundColor];
-    console.log(isLightColor);
 
     useEffect(() => {
         if (swiperInstance) {
@@ -48,7 +47,7 @@ const TimedSlider = ({ slides, backgroundColor }) => {
     }, [swiperInstance]);
 
     return hasSlides && (
-        <div className="mt-[100px]">
+        <div className="mt-16 md:mt-[100px]">
             <Swiper
                 onSwiper={setSwiperInstance}
                 modules={[EffectFade, Navigation]}

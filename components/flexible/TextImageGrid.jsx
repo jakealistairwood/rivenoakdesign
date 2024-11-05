@@ -9,7 +9,7 @@ import { checkPropertyExists } from "@/utils/helpers";
 const TextImageGrid = ({ rows }) => {
     const hasRows = checkPropertyExists(rows);
     return hasRows && (
-        <div className="flex flex-col mt-[120px] gap-y-5">
+        <div className="flex flex-col mt-12 md:mt-[120px] gap-y-5">
             {rows?.map((row, i) => (
                 <TextImageRow key={`row-${row?._key}`} {...row} index={i} />
             ))}
@@ -44,8 +44,8 @@ const TextImageRow = ({ backgroundColor, imageBlock, contentBlock, reverse_direc
                 <span className="text-[2rem] md:text-[7.5rem] leading-[80%] md:self-end">0{index + 1}</span>
                 {checkPropertyExists(contentBlock?.heading) && (
                     <div className="flex flex-col gap-y-6">
-                        <h3 className="font-serif ~text-[3rem]/[4rem] leading-[100%]" dangerouslySetInnerHTML={{ __html: contentBlock?.heading}} />
-                        {checkPropertyExists(contentBlock?.description) && <p className="text-[1.25rem]" dangerouslySetInnerHTML={{ __html: contentBlock?.description}} />}
+                        <h3 className="font-serif ~text-[2.4rem]/[4rem] leading-[100%]" dangerouslySetInnerHTML={{ __html: contentBlock?.heading}} />
+                        {checkPropertyExists(contentBlock?.description) && <p className="~text-[1rem]/[1.25rem]" dangerouslySetInnerHTML={{ __html: contentBlock?.description}} />}
                     </div>
                 )}
             </div>

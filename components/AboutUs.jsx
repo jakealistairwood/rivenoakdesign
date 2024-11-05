@@ -10,7 +10,7 @@ const AboutUs = ({ masthead, content }) => {
         <>
             <section className="bg-walnut pt-[164px] text-white relative">
                 <div className="max-w-[630px] w-full mx-auto flex flex-col gap-y-4 items-center text-center pb-[7.5rem]">
-                    <h1 className="font-serif text-[10rem] leading-[100%]">{heading}</h1>
+                    <h1 className="font-serif ~text-[5rem]/[10rem] leading-[100%]">{heading}</h1>
                     {checkPropertyExists(description) && <p className="max-w-[62ch]" dangerouslySetInnerHTML={{ __html: description}} />}
                 </div>
             </section>
