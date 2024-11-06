@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RowsPhotoAlbum } from "react-photo-album";
+import { RowsPhotoAlbum, RenderImageProps, RenderImageContext } from "react-photo-album";
 import "yet-another-react-lightbox/styles.css";
 import "react-photo-album/rows.css"
 import { urlFor } from "@/sanity/lib/image";
@@ -14,7 +14,7 @@ const Gallery = ({ gallery, productTitle }) => {
         src: urlFor(item?.asset),
         width: 1000,
         height: 1000,
-        blurDataURL: item?.placeholder,
+        blurDataURL: item?.blurURL,
         alt_text: `${productTitle} image ${i}`
     }))
 
@@ -32,11 +32,23 @@ const Gallery = ({ gallery, productTitle }) => {
                     // render={{
                     //     image: (props) => <Image {...props} width={500} height={500} />,
                     // }}
+                    // render={{
+                    //     photo: ({ onClick }, { photo, index }) => (
+                    //         <CustomPhoto photo={photo} setIndex={setIndex} index={index} />
+                    //     )
+                    // }}
                     render={{
-                        image: () => {
-                            photos.map((photo, i) => <Image key={`gallery-image-${i}`} {...photo} width={500} height={500} placeholder={photo?.blurDataURL} alt={photo?.alt_text} />)
-                        }
+                        image: renderNextImage
                     }}
+                    // render={{
+                    //     image: () => {
+                    //         photos.map((photo, i) => (
+                    //             <div className="relative aspect-[1/1]">
+                    //                 <Image key={`gallery-image-${i}`} {...photo} fill className="object-cover w-fill" placeholder={photo?.blurDataURL} alt={photo?.alt_text} />
+                    //             </div>
+                    //         ))
+                    //     }
+                    // }}
                 />
             </div>
             <Lightbox index={index} slides={photos} open={index >= 0} close={() => setIndex(-1)} />
@@ -45,3 +57,26 @@ const Gallery = ({ gallery, productTitle }) => {
 }
 
 export default Gallery;
+
+const CustomPhoto = ({ onClick, photo, setIndex, index }) => {
+    console.log(onClick);
+    return (
+        <button type="button" onClick={() => setIndex(index)} className="react-photo-album--photo react-photo-album--button">
+            <Image src={photo?.src} alt={photo?.alt_text} height={500} width={500} className="w-full object-cover react-photo-album--image" placeholder={photo?.blurDataURL} />
+        </button>
+    )
+}
+
+
+const renderNextImage = (RenderImageProps, { photo }) => {
+    return (
+        <button type="button" onClick={() => setIndex(index + 1)} className="aspect-[1/1] relative w-full">
+            <Image 
+                src={photo?.src}
+                alt={photo?.alt_text}
+                fill
+                placeholder={photo?.blurDataURL || undefined}
+            />
+        </button>
+    )
+}

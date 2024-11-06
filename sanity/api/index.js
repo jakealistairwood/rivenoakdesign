@@ -90,18 +90,16 @@ export const fetchProductData = async (slug) => {
         *[_type == "products" && slug.current == $slug]{
             ...,
             "slug": slug.current,
-            gallery[]
+            gallery[]{
+                ...,
+                "blurURL": asset->metadata.lqip
+            }
         }[0]
     `;
 
     const params = { slug };
 
     const data = await client.fetch(query, params);
-
-    if (data) {
-        await processImagesRecursively(data);
-    }
-
     return data;
 };
 
