@@ -59,9 +59,9 @@ const Footer = ({ basePages, productPages, socials, contactDetails }) => {
                                     Site
                                 </h5>
                                 <menu className="mt-10 font-body flex flex-col text-sm gap-y-6">
-                                    {basePages?.map(page => (
-                                        <li key={`nav-link-${page?._id}`}>
-                                            <Link href={page?.slug} className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black">{page?.title === "Homepage" ? "Home" : page?.title}</Link>
+                                    {basePages?.map(basePage => (
+                                        <li key={`base-page-nav-link-${basePage?._id}`}>
+                                            <Link href={basePage?.slug} className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black">{basePage?.title === "Homepage" ? "Home" : basePage?.title}</Link>
                                         </li>
                                     ))}
                                 </menu>
@@ -71,13 +71,13 @@ const Footer = ({ basePages, productPages, socials, contactDetails }) => {
                                     Products
                                 </h5>
                                 <menu className="mt-10 font-body flex flex-col text-sm gap-y-6">
-                                    {productPages?.map(page => (
-                                        <li key={`nav-link-${page?._id}`}>
+                                    {productPages?.map(productPage => (
+                                        <li key={`product-page-nav-link-${productPage?._id}`}>
                                             <Link
-                                                href={`/products/${page?.slug}`}
+                                                href={`/products/${productPage?.slug}`}
                                                 className="tracking-[0.04em] duration-300 ease transition-colors text-black-80 hover:text-black"
                                             >
-                                                {page?.title}
+                                                {productPage?.title}
                                             </Link>
                                         </li>
                                     ))}

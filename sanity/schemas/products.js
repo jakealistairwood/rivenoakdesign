@@ -64,5 +64,15 @@ export const products = {
             title: "Description",
             of: [{ type: "block" }],
         },
+        {
+            name: "gallery",
+            type: "array",
+            title: "Gallery",
+            of: [
+                {
+                    type: "image",
+                },
+            ],
+        },
     ],
 };
