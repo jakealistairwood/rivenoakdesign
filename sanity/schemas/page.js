@@ -17,6 +17,10 @@ export const page = {
             name: "pageOptions",
             title: "Page Options",
         },
+        {
+            name: "seo",
+            title: "SEO",
+        },
     ],
     fields: [
         {
@@ -66,6 +70,24 @@ export const page = {
             title: "Hide FAQs?",
             group: "pageOptions",
             initialValue: false,
+        },
+        {
+            name: "seoData",
+            type: "object",
+            title: "SEO",
+            group: "seo",
+            fields: [
+                {
+                    name: "title",
+                    type: "string",
+                    title: "Title",
+                },
+                {
+                    name: "description",
+                    type: "text",
+                    title: "Description",
+                },
+            ],
         },
     ],
     preview: {

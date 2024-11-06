@@ -90,6 +90,7 @@ export const fetchProductData = async (slug) => {
         *[_type == "products" && slug.current == $slug]{
             ...,
             "slug": slug.current,
+            gallery[]
         }[0]
     `;
 
