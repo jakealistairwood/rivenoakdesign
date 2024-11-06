@@ -30,6 +30,8 @@ const ProductPage = ({ product, otherProducts }) => {
         }
     }
 
+    console.log(`gallery photos: `, gallery);
+
     return (
         <>
             <section className="py-16 md:py-[7.5rem] overflow-hidden px-4 lg:px-0">

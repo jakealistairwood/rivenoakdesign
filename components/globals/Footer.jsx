@@ -14,8 +14,6 @@ const Footer = ({ basePages, productPages, socials, contactDetails }) => {
 
     const renderAddress = hasAddress || hasPhone || hasEmail;
 
-    console.log(hasEmail);
-
     return (
         <footer className="text-black pb-[120px]">
             <div className="container">

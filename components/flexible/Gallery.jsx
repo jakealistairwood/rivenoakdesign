@@ -18,7 +18,7 @@ const Gallery = ({ gallery, productTitle }) => {
         alt_text: `${productTitle} image ${i}`
     }))
 
-    console.log(photos);
+    console.log(`this is the gallery component:`, photos);
 
     return (
         <div className="flex flex-col gap-y-12 md:gap-y-20">
