@@ -9,7 +9,8 @@ import Link from "next/link";
 import { PortableText } from "next-sanity";
 import AnimatedLink from "../animations/AnimatedLink";
 
-const Gallery = dynamic(() => import("@/components/flexible/Gallery"));
+import Gallery from "../flexible/Gallery";
+// const Gallery = dynamic(() => import("@/components/flexible/Gallery"));
 const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
 
 const ProductPage = ({ product, otherProducts }) => {
