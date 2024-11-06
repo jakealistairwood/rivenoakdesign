@@ -8,7 +8,7 @@ import { checkPropertyExists } from "@/utils/helpers";
 const OurProducts = ({ products }) => {
     const renderProducts = products && products.length > 0;
     return (
-        <main className="bg-walnut text-white py-[180px]">
+        <main className="bg-walnut text-white py-[7.5rem]">
             <div className="container">
                 <div className="flex flex-col gap-y-20">
                     <div className="flex items-center justify-between">

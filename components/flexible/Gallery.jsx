@@ -70,7 +70,7 @@ const CustomPhoto = ({ onClick, photo, setIndex, index }) => {
 
 const renderNextImage = (RenderImageProps, { photo }) => {
     return (
-        <button type="button" onClick={() => setIndex(index + 1)} className="aspect-[1/1] relative w-full">
+        <button type="button" className="aspect-[1/1] relative w-full">
             <Image 
                 src={photo?.src}
                 alt={photo?.alt_text}

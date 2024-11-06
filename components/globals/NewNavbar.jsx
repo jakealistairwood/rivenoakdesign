@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { animate, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { lineOneAnimation, lineTwoAnimation } from "@/utils/animations";
 import AnimatedLink from "../animations/AnimatedLink";
 
@@ -41,12 +41,12 @@ const NewNavbar = ({ navbarBg }) => {
     };
 
     const bgStyles = {
-        default: animateHeader ? "bg-[#F5F5F5] text-black" : "bg-[#3B3B3B]/30 text-white",
+        default: animateHeader || openMobileMenu ? "bg-[#F5F5F5] text-black" : "bg-[#3B3B3B]/30 text-white",
         white: "bg-[#F5F5F5] text-black",
     };
 
     const hamburgerStyles = {
-        default: animateHeader ? "bg-black" : "bg-white",
+        default: animateHeader || openMobileMenu ? "bg-black" : "bg-white",
         white: "bg-black",
     }
 
@@ -92,7 +92,7 @@ const NewNavbar = ({ navbarBg }) => {
                         </nav>
                         <nav className="hidden md:flex items-center font-body gap-x-8">
                             <NavLink href="/contact" label="Contact Us" />
-                            <NavCTA animateHeader={animateHeader} navbarBg={navbarBg} />
+                            <NavCTA animateCTA={animateHeader || openMobileMenu} animateHeader={animateHeader} navbarBg={navbarBg} />
                         </nav>
                     </div>
                     {openMobileMenu && (
@@ -135,11 +135,11 @@ const NavLink = ({ href, label }) => {
     )
 }
 
-const NavCTA = ({ animateHeader = false, navbarBg }) => {
+const NavCTA = ({ animateCTA = false, navbarBg }) => {
     const [hovered, setHovered] = useState(false);
     
     const buttonStyles = {
-        default: animateHeader ? "bg-[#1F1F1F] text-white border border-[#1F1F1F]" : "border border-white/[30%] text-white hover:bg-[#E5E0CE] hover:text-walnut",
+        default: animateCTA ? "bg-[#1F1F1F] text-white border border-[#1F1F1F]" : "border border-white/[30%] text-white hover:bg-[#E5E0CE] hover:text-walnut",
         white: "bg-[#1F1F1F] text-white border border-[#1F1F1F]", 
     }
 
