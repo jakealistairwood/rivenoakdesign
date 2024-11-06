@@ -6,7 +6,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Lightbox from "yet-another-react-lightbox";
 import Image from "next/image";
 
-const Gallery = ({ gallery }) => {
+const Gallery = ({ gallery, productTitle }) => {
     const [index, setIndex] = useState(-1);
     let photos = [];
 
@@ -14,7 +14,8 @@ const Gallery = ({ gallery }) => {
         src: urlFor(item?.asset),
         width: 1000,
         height: 1000,
-        blurDataURL: item?.placeholder
+        blurDataURL: item?.placeholder,
+        alt_text: `${productTitle} image ${i}`
     }))
 
     console.log(photos);
@@ -33,7 +34,7 @@ const Gallery = ({ gallery }) => {
                     // }}
                     render={{
                         image: () => {
-                            photos.map((photo, i) => <Image key={`gallery-image-${i}`} {...photo} width={500} height={500} placeholder={photo?.blurDataURL} />)
+                            photos.map((photo, i) => <Image key={`gallery-image-${i}`} {...photo} width={500} height={500} placeholder={photo?.blurDataURL} alt={photo?.alt_text} />)
                         }
                     }}
                 />

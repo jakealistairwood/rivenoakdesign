@@ -7,8 +7,8 @@ import { urlFor } from "@/sanity/lib/image";
 import { checkPropertyExists } from "@/utils/helpers";
 import Link from "next/link";
 import { PortableText } from "next-sanity";
-import Gallery from "../flexible/Gallery";
 
+const Gallery = dynamic(() => import("@/components/flexible/Gallery"));
 const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
 
 const ProductPage = ({ product, otherProducts }) => {
@@ -64,7 +64,7 @@ const ProductPage = ({ product, otherProducts }) => {
             {checkPropertyExists(gallery) && (
                 <section className="bg-white text-black pb-[7.5rem]">
                     <div className="container">
-                        <Gallery gallery={gallery} />
+                        <Gallery gallery={gallery} productTitle={title} />
                     </div>
                 </section>
             )}
