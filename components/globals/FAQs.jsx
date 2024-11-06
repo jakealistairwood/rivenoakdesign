@@ -15,8 +15,6 @@ const FAQs = ({ faqOptions, faqs }) => {
         content: faq?.answer,
     }));
 
-    console.log(accordion_items);
-
     return (
         <section className="relative bg-white text-black">
             <div className="container py-20 md:py-[120px]" id="faqs">

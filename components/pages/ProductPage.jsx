@@ -14,6 +14,7 @@ import Gallery from "../flexible/Gallery";
 const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
 
 const ProductPage = ({ product, otherProducts }) => {
+    console.log(product);
     const { title = "", slug = "", excerpt = "", description = "", thumbnail, gallery } = product;
     
     const hasOtherProducts = checkPropertyExists(otherProducts);
