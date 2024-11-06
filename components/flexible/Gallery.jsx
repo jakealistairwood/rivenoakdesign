@@ -33,7 +33,7 @@ const Gallery = ({ gallery }) => {
                     // }}
                     render={{
                         image: () => {
-                            photos.map((photo, i) => <Image {...photo} width={500} height={500} placeholder={photo?.blurDataURL} />)
+                            photos.map((photo, i) => <Image key={`gallery-image-${i}`} {...photo} width={500} height={500} placeholder={photo?.blurDataURL} />)
                         }
                     }}
                 />
