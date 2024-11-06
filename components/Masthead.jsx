@@ -93,8 +93,10 @@ const Masthead = (props) => {
 
     useEffect(() => {
         const body = document.querySelector("body");
-        body.classList.add("body--fixed");
-        if (imageAnimationsComplete) {
+        if (window.location.href === "/" && !imageAnimationsComplete) {
+            body.classList.add("body--fixed");
+        }
+        if (body.classList.contains("body--fixed") && imageAnimationsComplete) {
             body.classList.remove("body--fixed");
         }
     }, [imageAnimationsComplete]);
