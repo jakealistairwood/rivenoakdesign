@@ -15,7 +15,7 @@ const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCar
 
 const ProductPage = ({ product, otherProducts }) => {
     console.log(product);
-    const { title = "", slug = "", excerpt = "", description = "", thumbnail, gallery } = product;
+    const { title = "", slug = "", excerpt = "", description = "", thumbnail } = product;
     
     const hasOtherProducts = checkPropertyExists(otherProducts);
 
@@ -31,7 +31,7 @@ const ProductPage = ({ product, otherProducts }) => {
         }
     }
 
-    console.log(`gallery photos: `, gallery);
+    console.log(`gallery photos: `, product?.gallery);
 
     return (
         <>
@@ -74,10 +74,10 @@ const ProductPage = ({ product, otherProducts }) => {
                     </div>
                 </div>
             </section>
-            {checkPropertyExists(gallery) && (
+            {checkPropertyExists(product?.gallery) && (
                 <section className="bg-white text-black pt-8 pb-12 md:pt-0 md:pb-[7.5rem]">
                     <div className="container">
-                        <Gallery gallery={gallery} productTitle={title} />
+                        <Gallery gallery={product?.gallery} productTitle={title} />
                     </div>
                 </section>
             )}
