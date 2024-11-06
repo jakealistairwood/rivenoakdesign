@@ -95,7 +95,13 @@ export const fetchProductData = async (slug) => {
 
     const params = { slug };
 
-    return await client.fetch(query, params);
+    const data = await client.fetch(query, params);
+
+    if (data) {
+        await processImagesRecursively(data);
+    }
+
+    return data;
 };
 
 export const fetchNavbarColor = async (slug) => {
