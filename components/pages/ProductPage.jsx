@@ -43,7 +43,7 @@ const ProductPage = ({ product, otherProducts }) => {
                     <div className="col-span-5 flex flex-col md:mt-10">
                         <Breadcrumb currentPage={title} />
                         <div className="block lg:hidden relative w-full max-h-[854px] aspect-[1024/854] mb-10">
-                            {thumbnail?.asset && <Image src={urlFor(thumbnail?.asset)} alt={`${title}`} fill className="w-full object-cover" placeholder={thumbnail?.placeholder} />}    
+                            {thumbnail?.asset && <Image src={urlFor(thumbnail?.asset)} alt={`${title}`} fill className="w-full object-cover" placeholder={thumbnail?.blurURL} />}    
                         </div>
                         <div className="flex flex-col gap-y-4">
                             <strong className="bg-[#0000000d] text-black w-fit uppercase text-sm font-mono tracking-[0.14em] px-[10px] py-1 mb-2 font-normal">Product</strong>

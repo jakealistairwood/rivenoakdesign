@@ -90,6 +90,10 @@ export const fetchProductData = async (slug) => {
         *[_type == "products" && slug.current == $slug]{
             ...,
             "slug": slug.current,
+            thumbnail{
+                ...,
+                "blurURL": asset->metadata.lqip
+            },
             gallery[]{
                 ...,
                 "blurURL": asset->metadata.lqip
@@ -160,4 +164,15 @@ export const fetchProductPages = async () => {
     `;
 
     return await client.fetch(query);
+};
+
+export const fetchPageSEOData = async (slug) => {
+    const query = `
+        *[_type == "page" && slug.current == $slug]{
+            seoData,
+        }[0]
+    `;
+    const params = { slug };
+
+    return await client.fetch(query, params);
 };
