@@ -170,7 +170,7 @@ const FilterTab = ({ filter, activeFilter, handleFilter, index }) => {
 const MobileFilterMenu = ({ filters, handleFilter, activeFilter }) => {
     const [openMobileFilterMenu, setOpenMobileFilterMenu] = useState(false);
     return (
-        <div className="flex items-center font-mono uppercase text-sm gap-x-4 relative">
+        <div className="flex md:hidden items-center font-mono uppercase text-sm gap-x-4 relative">
             <h2 className="pb-2 font-bold">Filter By:</h2>
             <button 
                 className="flex items-center justify-between grow text-left border-b pb-2 border-black/10" 
