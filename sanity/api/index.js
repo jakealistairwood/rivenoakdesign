@@ -49,7 +49,8 @@ export const fetchPageData = async (slug) => {
                     }
                 }
             },
-            hide_global_cta
+            hide_global_cta,
+            hide_faqs,
         }[0]
     `;
     const params = { slug };

@@ -15,7 +15,7 @@ export default async function Products() {
     // const categories = await fetchCategories();
     const products = await fetchProducts();
 
-    const data = await fetchPageData("products");
+    const data = await fetchPageData("/products");
     const globalOptions = await fetchGlobalOptions();
     const faqs = await fetchFAQs();
 
@@ -24,7 +24,7 @@ export default async function Products() {
   
     return (
       <>
-        <Navbar navbarBg="default" />
+        <Navbar navbarBg="white" />
         <main>
           <OurProducts products={products} />
           <LayoutRenderer page={data} globalOptions={globalOptions} />
