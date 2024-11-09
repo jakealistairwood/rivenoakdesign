@@ -193,7 +193,7 @@ const MobileFilterMenu = ({ filters, handleFilter, activeFilter }) => {
                         }}>All</button>
                     </li>
                     {filters?.map((filter, i) => (
-                        <li className="border-b border-black/10 last:border-none">
+                        <li key={`mobile-product-menu-filter-${i}`} className="border-b border-black/10 last:border-none">
                             <button className="py-4" type="button" onClick={() => {
                                 handleFilter(filter);
                                 setOpenMobileFilterMenu(false);
