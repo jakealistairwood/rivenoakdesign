@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const CTA = dynamic(() => import("@/components/globals/CTA"));
 
 export default async function About() {
-  const data = await fetchPageData("about");
+  const data = await fetchPageData("/about");
 
   const globalOptions = await fetchGlobalOptions();
   const hideCTA = data?.hide_global_cta;
