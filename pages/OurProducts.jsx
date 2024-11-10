@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { checkPropertyExists } from "@/utils/helpers";
 
 const capitalizeWords = (str) => {
@@ -29,7 +29,7 @@ const OurProducts = ({ products }) => {
     }
 
     return (
-        <main className="bg-white text-black pt-[6rem] md:pt-[10rem] pb-[7.5rem]">
+        <main className="bg-white text-black pt-[8rem] md:pt-[10rem] pb-[7.5rem]">
             <div className="container">
                 <div className="flex flex-col gap-y-10 md:gap-y-20">
                     <div className="flex flex-col gap-y-14">
@@ -87,9 +87,38 @@ const OurProducts = ({ products }) => {
 
 export default OurProducts;
 
-const ProductCard = ({ title, excerpt, thumbnail, slug }) => {
+const ProductCard = ({ title, excerpt, thumbnail, slug, index }) => {
+    const cardRef = useRef(null);
+    const isInView = useInView(cardRef, {
+        amount: 0.2,
+        once: true,
+    })
+
+    const cardAnimation = {
+        initial: {
+            opacity: 0,
+            y: 50,
+            scale: 0.9,
+            filter: "blur(20px)",
+        },
+        animate: (i) => ({
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            transition: {
+                duration: 0.2,
+                delay: i * 0.05,
+                ease: "easeInOut",
+            }
+        }),
+        exit: {
+            opacity: 0,
+        }
+    }
+
     return (
-        <motion.article initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex flex-col">
+        <motion.article variants={cardAnimation} initial="initial" animate={isInView ? "animate" : "initial"} exit="exit" custom={index} className="flex flex-col" ref={cardRef}>
             <h3 className="font-serif ~text-[2rem]/[3rem] mb-4">{title}</h3>
             <Link
                 className="flex relative aspect-[3/2] text-white p-10 group overflow-hidden rounded-[3px]"

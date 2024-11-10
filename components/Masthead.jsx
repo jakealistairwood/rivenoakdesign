@@ -133,7 +133,7 @@ const Masthead = (props) => {
                                 <Image className="object-cover" src={urlFor(left_block?.image_one?.asset)} alt="" fill priority placeholder={left_block?.image_one?.placeholder} />
                             </div>
                         </motion.div>}
-                        {left_block?.image_two && <motion.div className="absolute left-14 -top-20 w-full max-w-[190px] blur-sm grayscale" variants={imageOneAnimation} initial={pageVisited ? finalImagesAnimationState : "initial"} animate="animate" custom={2}>
+                        {left_block?.image_two && <motion.div className="absolute left-20 -top-28 md:left-14 md:-top-20 w-full max-w-[100px] md:max-w-[190px] blur-sm grayscale" variants={imageOneAnimation} initial={pageVisited ? finalImagesAnimationState : "initial"} animate="animate" custom={2}>
                             <div className="aspect-[1/1] relative">
                                 <Image src={urlFor(left_block?.image_two?.asset)} alt="" fill priority placeholder={left_block?.image_two?.placeholder} />
                             </div>

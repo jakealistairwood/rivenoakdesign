@@ -1,4 +1,4 @@
-import { Inter, Bebas_Neue } from "next/font/google";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
 // import Navbar from "@/components/globals/Navbar";
@@ -7,7 +7,6 @@ import FooterWrapper from "@/components/globals/FooterWrapper";
 import { fetchPageSEOData } from "@/sanity/api";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
-const bebasNeue = Bebas_Neue({subsets: ["latin"], weight: ["400"], variable: "--font-subheading" });
 
 const ppNeueMontreal = localFont({
     src: [
@@ -89,7 +88,7 @@ export async function generateMetadata({ params }) {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} ${instrumentSerif.variable} ${ppNeueMontreal.variable} ${bebasNeue.variable} ${commitMono.variable}`}>
+            <body className={`${inter.variable} ${instrumentSerif.variable} ${ppNeueMontreal.variable} ${commitMono.variable}`}>
                 {/* <Navbar /> */}
                 {children}
                 <FooterWrapper />
