@@ -120,8 +120,7 @@ const Masthead = (props) => {
                             <AnimatedLink hovered={hovered} label="View our Products" />
                         </Link> */}
                         {links?.map((link, i) => (
-                            <MastheadLink url={link?.url} label={link?.label} classNames={`${i === 0 ? "bg-[#E5E0CE] text-walnut" : "bg-white/[6%] text-white"}`} />
-
+                            <MastheadLink key={`masthead-link-${i}`} url={link?.url} label={link?.label} classNames={`${i === 0 ? "bg-[#E5E0CE] text-walnut" : "bg-white/[6%] text-white"}`} />
                         ))}
                         {/* <MastheadLink label="About Riven Oak" classNames="bg-white/[6%] text-white" /> */}
                     </div>
