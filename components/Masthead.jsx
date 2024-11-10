@@ -10,7 +10,7 @@ import AnimatedLink from "./animations/AnimatedLink";
 const Masthead = (props) => {
     const [imageAnimationsComplete, setImageAnimationsComplete] = useState(false);
     const [pageVisited, setPageVisited] = useState(false);
-    const { heading = "", subheading = "", images } = props;
+    const { heading = "", subheading = "", images, links } = props;
 
     const { left_block = {}, right_block = {} } = images;
 
@@ -114,13 +114,19 @@ const Masthead = (props) => {
                     <span className="sr-only">{heading}</span>
                 </motion.h1> */}
                 {/* {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal">{subheading}</span>} */}
-                <div className="flex items-center justify-center gap-x-4 mt-10 relative z-[2]">
-                    {/* <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">
-                        <AnimatedLink hovered={hovered} label="View our Products" />
-                    </Link> */}
-                    <MastheadLink label="View Our Products" classNames="bg-[#E5E0CE] text-walnut" />
-                    <MastheadLink label="About Riven Oak" classNames="bg-white/[6%] text-white" />
-                </div>
+                {checkPropertyExists(links) && (
+                    <div className="flex items-center justify-center gap-x-4 mt-10 relative z-[2]">
+                        {/* <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">
+                            <AnimatedLink hovered={hovered} label="View our Products" />
+                        </Link> */}
+                        {links?.map((link, i) => (
+                            <MastheadLink url={link?.url} label={link?.label} classNames={`${i === 0 ? "bg-[#E5E0CE] text-walnut" : "bg-white/[6%] text-white"}`} />
+
+                        ))}
+                        {/* <MastheadLink label="About Riven Oak" classNames="bg-white/[6%] text-white" /> */}
+                    </div>
+
+                )}
                 <div className="absolute grid grid-cols-2 inset-0">
                     <div className="relative">
                         {left_block?.image_one && <motion.div variants={imageOneAnimation} initial={pageVisited ? finalImagesAnimationState : "initial"} animate="animate" className="absolute z-[1] top-10 -left-[40%] aspect-[370/176] w-full max-w-[370px]" custom={1}>
@@ -150,7 +156,7 @@ const Masthead = (props) => {
 export default Masthead;
 
 
-const MastheadLink = ({ label, classNames = "" }) => {
+const MastheadLink = ({ url, label, classNames = "" }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -164,7 +170,7 @@ const MastheadLink = ({ label, classNames = "" }) => {
     return (
         <Link 
             className={`${classNames} px-[30px] py-5 rounded-md font-medium text-sm`} 
-            href="/"
+            href={url}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onFocus={handleMouseEnter}

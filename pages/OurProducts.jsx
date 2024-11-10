@@ -31,10 +31,10 @@ const OurProducts = ({ products }) => {
     return (
         <main className="bg-white text-black pt-[6rem] md:pt-[10rem] pb-[7.5rem]">
             <div className="container">
-                <div className="flex flex-col gap-y-10">
+                <div className="flex flex-col gap-y-10 md:gap-y-20">
                     <div className="flex flex-col gap-y-14">
                         <header>
-                            <h1 className="font-serif ~text-[3rem]/[7rem] leading-[100%]">
+                            <h1 className="font-serif ~text-[3rem]/[5.5rem] leading-[100%]">
                                 Discover Our Full Range
                             </h1>
                         </header>

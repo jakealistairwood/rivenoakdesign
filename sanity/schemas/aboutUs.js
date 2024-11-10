@@ -18,18 +18,6 @@ export const aboutUs = {
                     type: "text",
                     title: "Description",
                 },
-                {
-                    name: "image",
-                    type: "image",
-                    title: "Image",
-                    fields: [
-                        {
-                            name: "alt_text",
-                            type: "string",
-                            title: "Alt Text",
-                        },
-                    ],
-                },
             ],
         },
         {

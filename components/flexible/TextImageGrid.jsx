@@ -21,18 +21,6 @@ export default TextImageGrid;
 
 const TextImageRow = ({ backgroundColor, imageBlock, contentBlock, reverse_direction = false, index }) => {
     const imageBlurUrl = urlFor(imageBlock?.image?.asset);
-
-    // const getBase64 = async (src) => {
-    //     const buffer = await fetch(src).then( async (res) => {
-    //         return Buffer.from(await res.arrayBuffer());
-    //     });
-
-    //     return buffer;
-    // }
-
-    // const base64Blur = getBase64(imageBlurUrl);
-    
-    // console.log(base64Blur);
     return (
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
             {imageBlock?.image && (

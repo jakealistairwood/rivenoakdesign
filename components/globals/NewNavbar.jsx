@@ -2,10 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { animate, motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { lineOneAnimation, lineTwoAnimation } from "@/utils/animations";
+// import { lineOneAnimation, lineTwoAnimation } from "@/utils/animations";
 import AnimatedLink from "../animations/AnimatedLink";
 import { checkPropertyExists } from "@/utils/helpers";
+
+const NavLogo = "/images/nav-logo.svg";
 
 const NewNavbar = ({ navbarBg, contactDetails }) => {
     const [hideOnScroll, setHideOnScroll] = useState(false);
@@ -13,8 +16,6 @@ const NewNavbar = ({ navbarBg, contactDetails }) => {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
     const { phone = "" } = contactDetails;
-
-    console.log(phone);
 
     const isPhoneNumber = checkPropertyExists(phone);
 
@@ -73,18 +74,26 @@ const NewNavbar = ({ navbarBg, contactDetails }) => {
                 <div className="container">
                     <div className="flex items-center justify-between py-3">
                         <nav className="flex justify-between md:justify-normal items-center gap-x-10 lg:gap-x-[110px] w-full md:w-fit">
-                            <Link
+                            {/* <Link
                                 className="uppercase font-heading tracking-[0.28em] font-medium text-[0.875rem] lg:text-[1rem] pointer-events-none"
                                 href="/"
                             >
                                 Riven Oak Design.
-                            </Link>
+                            </Link> */}
                             {/* <Link
                                 className="uppercase font-heading tracking-[0.28em] font-medium text-[0.875rem] lg:text-[1rem] pointer-events-none"
                                 href="/"
                             >
                                 <NewLogo />
                             </Link> */}
+                            <Link
+                                href="/"
+                                aria-label="Back to Homepage"
+                                className="relative"
+                            >
+                                {/* <Image src={NavLogo} fill alt="Riven Oak Design logo" className="w-full object-contain h-full" /> */}
+                                <NewLogo />
+                            </Link>
                             <menu className="hidden md:flex items-center gap-x-10 font-body text-xs font-medium">
                                 <li>
                                     <NavLink href="/" label="Home" />
@@ -175,7 +184,7 @@ const NavLink = ({ href, label }) => {
 
     return (
         <Link
-            className="text-sm tracking-wide font-medium block relative"
+            className="text-2xl md:text-sm tracking-wide font-medium block relative"
             href={href}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
@@ -215,7 +224,7 @@ const NewLogo = () => {
     return (
         <div className="aspect-[137/120] relative max-w-[60px]">
             <svg
-                className="w-full"
+                className="w-full h-full"
                 width="137"
                 height="120"
                 viewBox="0 0 137 120"

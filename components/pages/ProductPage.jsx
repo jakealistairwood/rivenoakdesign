@@ -14,7 +14,6 @@ import Gallery from "../flexible/Gallery";
 const ProductsCarousel = dynamic(() => import("@/components/flexible/ProductsCarousel"));
 
 const ProductPage = ({ product, otherProducts }) => {
-    console.log(product);
     const { title = "", slug = "", excerpt = "", description = "", thumbnail } = product;
     
     const hasOtherProducts = checkPropertyExists(otherProducts);
@@ -31,11 +30,9 @@ const ProductPage = ({ product, otherProducts }) => {
         }
     }
 
-    console.log(`gallery photos: `, product?.gallery);
-
     return (
         <>
-            <section className="py-16 md:py-[7.5rem] overflow-hidden px-4 lg:px-0">
+            <section className="pt-24 pb-16 md:py-[7.5rem] overflow-hidden px-4 lg:px-0">
                 <div className="max-w-[1440px] w-full mx-auto flex flex-col-reverse lg:grid lg:grid-cols-12 gap-x-20">
                     <div className="hidden lg:block relative w-full max-h-[854px] aspect-[1024/854] col-span-7">
                         {thumbnail?.asset && <Image src={urlFor(thumbnail?.asset)} alt="" fill className="w-full object-cover" />}    

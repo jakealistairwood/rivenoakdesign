@@ -18,8 +18,6 @@ const Gallery = ({ gallery, productTitle }) => {
         alt_text: `${productTitle} image ${i}`
     }))
 
-    console.log(`this is the gallery component:`, photos);
-
     return (
         <div className="flex flex-col gap-y-12 md:gap-y-20">
             <h2 className="text-center font-serif font-regular -tracking-[0.02em] leading-[1] ~text-[3rem]/[4.5rem]">Product Gallery</h2>
@@ -29,26 +27,9 @@ const Gallery = ({ gallery, productTitle }) => {
                     photos={photos} 
                     targetRowHeight={500} 
                     onClick={({ index: current }) => setIndex(current)} 
-                    // render={{
-                    //     image: (props) => <Image {...props} width={500} height={500} />,
-                    // }}
-                    // render={{
-                    //     photo: ({ onClick }, { photo, index }) => (
-                    //         <CustomPhoto photo={photo} setIndex={setIndex} index={index} />
-                    //     )
-                    // }}
                     render={{
                         image: renderNextImage
                     }}
-                    // render={{
-                    //     image: () => {
-                    //         photos.map((photo, i) => (
-                    //             <div className="relative aspect-[1/1]">
-                    //                 <Image key={`gallery-image-${i}`} {...photo} fill className="object-cover w-fill" placeholder={photo?.blurDataURL} alt={photo?.alt_text} />
-                    //             </div>
-                    //         ))
-                    //     }
-                    // }}
                 />
             </div>
             <Lightbox index={index} slides={photos} open={index >= 0} close={() => setIndex(-1)} />
@@ -57,16 +38,6 @@ const Gallery = ({ gallery, productTitle }) => {
 }
 
 export default Gallery;
-
-const CustomPhoto = ({ onClick, photo, setIndex, index }) => {
-    console.log(onClick);
-    return (
-        <button type="button" onClick={() => setIndex(index)} className="react-photo-album--photo react-photo-album--button">
-            <Image src={photo?.src} alt={photo?.alt_text} height={500} width={500} className="w-full object-cover react-photo-album--image" placeholder={photo?.blurDataURL} />
-        </button>
-    )
-}
-
 
 const renderNextImage = (RenderImageProps, { photo }) => {
     return (

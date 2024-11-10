@@ -22,7 +22,7 @@ const ContactMasthead = ({
                 <div className="w-1/2" />
                 <div className="w-1/2 bg-slate-green"></div>
             </div>
-            <div className="flex flex-col gap-y-14 md:flex-row md:container pt-6 md:pt-[7.5rem]" id="contactUs">
+            <div className="flex flex-col gap-y-14 md:flex-row md:container pt-14 md:pt-[7.5rem]" id="contactUs">
                 <div className="md:w-1/2 flex flex-col justify-between gap-y-10 md:pr-20 md:pb-20">
                     <div className="flex flex-col gap-y-8 px-4">
                         <div className="flex flex-col gap-y-4">
@@ -116,6 +116,12 @@ const ContactForm = ({ form }) => {
                         name="firstName"
                         id="firstName"
                         placeholder="Joe"
+                        required
+                    />
+                    <ValidationError
+                        prefix="First Name"
+                        field="firstName"
+                        errors={state.errors}
                     />
                 </div>
                 <div className="flex flex-col gap-y-2">
@@ -182,7 +188,13 @@ const ContactForm = ({ form }) => {
                     placeholder="Your message"
                     name="message"
                     id="message"
+                    required
                 ></textarea>
+                <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                />
             </div>
             <button
                 className="block tracking-wide text-sm py-3 px-6 font-medium rounded bg-[#1F1F1F] text-white border border-[#1F1F1F] opacity-100 hover:opacity-90 duration-200 ease w-fit"

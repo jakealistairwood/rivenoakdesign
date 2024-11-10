@@ -19,6 +19,29 @@ export const masthead = {
             title: "Subheading",
         },
         {
+            name: "links",
+            type: "array",
+            title: "Links",
+            of: [
+                {
+                    name: "link",
+                    type: "object",
+                    fields: [
+                        {
+                            name: "url",
+                            type: "string",
+                            title: "URL",
+                        },
+                        {
+                            name: "label",
+                            type: "string",
+                            title: "Label",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
             name: "images",
             type: "object",
             title: "Images",
