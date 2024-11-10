@@ -5,7 +5,9 @@ import { checkPropertyExists } from "@/utils/helpers";
 import Link from "next/link";
 import AnimatedLink from "../animations/AnimatedLink";
 
-const CTA = ({ heading = "", description = "", links }) => {
+const CTA = ({ heading = "", description = "", links, overrideCTAUrl, overwrittenUrl = "" }) => {
+    const renderOverwrittenURL = overrideCTAUrl && checkPropertyExists(overwrittenUrl);
+    const renderedURL = renderOverwrittenURL ? overwrittenUrl : "/contact";
     return (
         <section className="md:pt-[2rem] pb-20 md:pb-[10rem]">
             <div className="container">
@@ -17,7 +19,7 @@ const CTA = ({ heading = "", description = "", links }) => {
                         </div>
                     )}
                     <div className="mt-8 flex w-fit mx-auto">
-                        <PrimaryButton label={links[0].label} classNames="bg-[#E5E0CE] text-walnut w-fit relative" />
+                        <PrimaryButton label={links[0].label} classNames="bg-[#E5E0CE] text-walnut w-fit relative" url={renderedURL} />
                     </div>
                 </div>
             </div>
@@ -28,7 +30,7 @@ const CTA = ({ heading = "", description = "", links }) => {
 export default CTA;
 
 
-const PrimaryButton = ({ label, classNames = "" }) => {
+const PrimaryButton = ({ label, classNames = "", url }) => {
     const [hovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -42,7 +44,7 @@ const PrimaryButton = ({ label, classNames = "" }) => {
     return (
         <Link 
             className={`${classNames} px-[30px] py-5 rounded-md font-medium text-sm w-fit`} 
-            href="/"
+            href={url}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onFocus={handleMouseEnter}

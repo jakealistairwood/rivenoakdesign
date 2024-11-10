@@ -60,7 +60,7 @@ const AccordionItem = ({ heading, content, index }) => {
                 className="accordion__panel"
                 hidden={accordionOpen ? false : true}
             >
-                <p className="font-body text-black-60">{content}</p>
+                <p className="font-body text-black-80">{content}</p>
                 <div className="min-h-8" />
             </div>
         </div>

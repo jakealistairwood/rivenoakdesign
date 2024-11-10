@@ -100,6 +100,7 @@ export const sections = defineType({
                         { name: "textImageGrid", type: "textImageGrid" },
                         { name: "accordion", type: "accordion" },
                         { name: "aboutUs", type: "aboutUs" },
+                        { name: "contactMasthead", type: "contactMasthead" },
                     ],
                     options: {
                         insertMenu: {
@@ -107,7 +108,11 @@ export const sections = defineType({
                                 {
                                     name: "mastheads",
                                     title: "Mastheads",
-                                    of: ["masthead", "aboutUs"],
+                                    of: [
+                                        "masthead",
+                                        "aboutUs",
+                                        "contactMasthead",
+                                    ],
                                 },
                                 {
                                     name: "elements",

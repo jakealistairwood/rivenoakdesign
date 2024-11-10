@@ -2,6 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 import Masthead from "@/components/Masthead";
+import ContactMasthead from "@/components/mastheads/ContactMasthead";
 import AboutUs from "@/components/AboutUs";
 
 const SectionHeader = dynamic(() => import("@/components/flexible/SectionHeader"));
@@ -16,12 +17,13 @@ const ImageGrid = dynamic(() => import("@/components/flexible/ImageGrid"));
 const TextImageGrid = dynamic(() => import("@/components/flexible/TextImageGrid"));
 const Accordion = dynamic(() => import("@/components/flexible/Accordion"));
 
-const ComponentRenderer = ({ components = [], backgroundColor }) => {
+const ComponentRenderer = ({ components = [], backgroundColor, contactDetails }) => {
     const renderComponent = (type, props) => {
         const { key, ...otherProps } = props;
 
         const RenderedComponent = {
             masthead: Masthead,
+            contactMasthead: ContactMasthead,
             aboutUs: AboutUs,
             sectionHeader: SectionHeader,
             productsCarousel: ProductsCarousel,
@@ -36,7 +38,7 @@ const ComponentRenderer = ({ components = [], backgroundColor }) => {
             accordion: Accordion,
         }[type]
 
-        return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} /> : null;
+        return RenderedComponent ? <RenderedComponent key={`${key}`} {...otherProps} backgroundColor={backgroundColor} contactDetails={contactDetails} /> : null;
     }
     return (
         <>

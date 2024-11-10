@@ -3,7 +3,7 @@ import ComponentRenderer from "./ComponentRenderer";
 import { getBackgroundColor, getContainerTextColor } from "@/utils/colors";
 
 const Section = memo((props) => {
-    const { components = [], backgroundColor, paddingTop, paddingBottom, addDivider = false, remove_container = false, overflow_hidden = false } = props;
+    const { components = [], backgroundColor, paddingTop, paddingBottom, addDivider = false, remove_container = false, overflow_hidden = false, contactDetails } = props;
 
     const getPaddingTop = {
         none: "pt-0",
@@ -31,7 +31,7 @@ const Section = memo((props) => {
     return (
         <section className={`relative ${containerClasses.join(" ")} ${overflow_hidden ? "overflow-hidden" : ""}`}>
             <div className={`${remove_container ? "" : "container"} ${paddingClasses.join(" ")}`}>
-                <ComponentRenderer components={components} backgroundColor={backgroundColor} />
+                <ComponentRenderer components={components} backgroundColor={backgroundColor} contactDetails={contactDetails} />
                 {addDivider && <div className={`${getPaddingTop[paddingTop]}`}>
                     <div className="h-[1px] w-full bg-[#D1D1D1]/50" />
                 </div>}

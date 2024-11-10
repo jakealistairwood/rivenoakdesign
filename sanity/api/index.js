@@ -51,6 +51,8 @@ export const fetchPageData = async (slug) => {
             },
             hide_global_cta,
             hide_faqs,
+            overwrite_global_cta_url,
+            global_cta_url,
         }[0]
     `;
     const params = { slug };

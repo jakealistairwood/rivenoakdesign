@@ -65,6 +65,20 @@ export const page = {
             initialValue: false,
         },
         {
+            name: "overwrite_global_cta_url",
+            type: "boolean",
+            title: "Override Global CTA URL",
+            group: "pageOptions",
+            initialValue: false,
+        },
+        {
+            name: "global_cta_url",
+            type: "string",
+            title: "Global CTA URL",
+            hidden: ({ parent }) => !parent?.overwrite_global_cta_url,
+            group: "pageOptions",
+        },
+        {
             name: "hide_faqs",
             type: "boolean",
             title: "Hide FAQs?",

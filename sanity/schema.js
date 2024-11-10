@@ -17,6 +17,7 @@ import { accordion } from "./schemas/accordion";
 import { aboutUs } from "./schemas/aboutUs";
 import { globalOptions } from "./schemas/globalOptions";
 import { faqs } from "./schemas/faqs";
+import { contactMasthead } from "./schemas/contactMasthead";
 
 export const schema = {
     types: [
@@ -24,6 +25,7 @@ export const schema = {
         sections,
         components,
         masthead,
+        contactMasthead,
         sectionHeader,
         products,
         productsCarousel,
