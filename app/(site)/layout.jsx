@@ -77,7 +77,7 @@ const commitMono = localFont({
 // };
 
 export async function generateMetadata({ params }) {
-    const seoData = await fetchPageSEOData("/")
+    const { seoData } = await fetchPageSEOData("/")
   
     return {
       title: seoData?.title,

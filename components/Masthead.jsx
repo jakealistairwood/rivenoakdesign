@@ -103,7 +103,8 @@ const Masthead = (props) => {
 
     return (
         <header className="min-h-screen flex flex-col items-center justify-center text-center">
-            <div className="max-w-[1019px] w-full mx-auto pt-20 relative" ref={containerRef}>
+            <div className="max-w-[1019px] w-full mx-auto pt-16 relative" ref={containerRef}>
+                {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal uppercase mb-4">Riven Oak Design</span>}
                 <h1 className="font-serif ~text-[3.5rem]/[5.5rem] -tracking-[2%] leading-[100%] relative z-[2]">{heading}</h1>
                 {/* <motion.h1 
                     className={`uppercase text-[8.25rem] leading-[0.83] font-heading font-black flex flex-col relative z-[2] text-mask ${isInView ? "text-mask-anim" : ""}`}
@@ -113,7 +114,6 @@ const Masthead = (props) => {
                     </span>
                     <span className="sr-only">{heading}</span>
                 </motion.h1> */}
-                {/* {hasSubheading && <span className="block mt-10 text-base tracking-[0.41em] font-body font-normal">{subheading}</span>} */}
                 {checkPropertyExists(links) && (
                     <div className="flex items-center justify-center gap-x-4 mt-10 relative z-[2]">
                         {/* <Link className="bg-[#E5E0CE] text-walnut px-[30px] py-5 rounded-md font-medium text-sm" href="/">
