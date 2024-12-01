@@ -76,7 +76,8 @@ const ContactMasthead = ({
 export default ContactMasthead;
 
 const ContactForm = ({ form }) => {
-    const [state, handleSubmit] = useForm("xdkozkyj");
+    const { id } = form;
+    const [state, handleSubmit] = useForm(id);
 
     if (state.succeeded) {
         return (
